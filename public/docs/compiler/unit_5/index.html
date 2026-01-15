@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Topics#Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis Code Optimization#Machine-dependent Peephole optimization Data-level optimization Cache optimization Machine-independent Loop optimization Constant folding Constant propagation Common subexpression elimination Loop Optimizations#Loop motion Loop fusion Loop unrolling Reduction in strength ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/compiler/unit_5/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Topics#Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis Code Optimization#Machine-dependent Peephole optimization Data-level optimization Cache optimization Machine-independent Loop optimization Constant folding Constant propagation Common subexpression elimination Loop Optimizations#Loop motion Loop fusion Loop unrolling Reduction in strength">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="Topics#Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis Code Optimization#Machine-dependent Peephole optimization Data-level optimization Cache optimization Machine-independent Loop optimization Constant folding Constant propagation Common subexpression elimination Loop Optimizations#Loop motion Loop fusion Loop unrolling Reduction in strength">
+  <meta itemprop="wordCount" content="115">
+
+<title>Unit 5 | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/compiler/unit_5/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="active">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Unit 5</h3>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="topics">Topics<a class="anchor" href="#topics">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Code generation
+<ul>
+<li><input disabled="" type="checkbox"> Issues in the design of a code generator</li>
+<li><input disabled="" type="checkbox"> The target language</li>
+<li><input disabled="" type="checkbox"> A simple target machine model</li>
+<li><input disabled="" type="checkbox"> Program and instruction costs</li>
+<li><input disabled="" type="checkbox"> Addresses in the target code</li>
+<li><input disabled="" type="checkbox"> Static allocation</li>
+<li><input disabled="" type="checkbox"> Stack allocation</li>
+<li><input disabled="" type="checkbox"> Run-time addresses for names</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Basic blocks and flow graphs
+<ul>
+<li><input disabled="" type="checkbox"> Representation of flow graphs</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Code optimization
+<ul>
+<li><input disabled="" type="checkbox"> Principal sources of optimization</li>
+<li><input disabled="" type="checkbox"> Data flow analysis
+<ul>
+<li><input disabled="" type="checkbox"> Abstraction</li>
+<li><input disabled="" type="checkbox"> Data flow analysis schema</li>
+<li><input disabled="" type="checkbox"> Data flow schemas on basic blocks</li>
+<li><input disabled="" type="checkbox"> Reaching definitions</li>
+<li><input disabled="" type="checkbox"> Live variable analysis</li>
+<li><input disabled="" type="checkbox"> Available expressions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Region-based analysis
+<ul>
+<li><input disabled="" type="checkbox"> Regions</li>
+<li><input disabled="" type="checkbox"> Region hierarchies for reducible flow graphs</li>
+<li><input disabled="" type="checkbox"> Overview of region-based analysis</li>
+</ul>
+</li>
+</ul>
+<h1 id="code-optimization">Code Optimization<a class="anchor" href="#code-optimization">#</a></h1>
+<ul>
+<li>Machine-dependent
+<ul>
+<li>Peephole optimization</li>
+<li>Data-level optimization</li>
+<li>Cache optimization</li>
+</ul>
+</li>
+<li>Machine-independent
+<ul>
+<li>Loop optimization</li>
+<li>Constant folding</li>
+<li>Constant propagation</li>
+<li>Common subexpression elimination</li>
+</ul>
+</li>
+</ul>
+<h1 id="loop-optimizations">Loop Optimizations<a class="anchor" href="#loop-optimizations">#</a></h1>
+<ul>
+<li>Loop motion</li>
+<li>Loop fusion</li>
+<li>Loop unrolling</li>
+<li>Reduction in strength</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/compiler/unit_4/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Unit 4</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/iot/imp_topics/" class="flex align-center">
+        <span>Imp Topics</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

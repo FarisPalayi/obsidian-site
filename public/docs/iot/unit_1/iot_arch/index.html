@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IoT Architecture (Layered Architecture)#This is a guaranteed high-weight topic. It appears:
+directly (“Explain IoT architecture”), or indirectly (middleware, security, applications all depend on it) If you understand this one diagram, half of Unit I becomes easy.
+1. What is IoT Architecture? (Exam-safe definition)#IoT architecture refers to the layered structural design of an IoT system that defines how data flows from physical devices to applications through communication networks and processing components.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/iot/unit_1/iot_arch/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="IoT Architecture (Layered Architecture)#This is a guaranteed high-weight topic. It appears:
+directly (“Explain IoT architecture”), or indirectly (middleware, security, applications all depend on it) If you understand this one diagram, half of Unit I becomes easy.
+1. What is IoT Architecture? (Exam-safe definition)#IoT architecture refers to the layered structural design of an IoT system that defines how data flows from physical devices to applications through communication networks and processing components.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="IoT Architecture (Layered Architecture)#This is a guaranteed high-weight topic. It appears:
+directly (“Explain IoT architecture”), or indirectly (middleware, security, applications all depend on it) If you understand this one diagram, half of Unit I becomes easy.
+1. What is IoT Architecture? (Exam-safe definition)#IoT architecture refers to the layered structural design of an IoT system that defines how data flows from physical devices to applications through communication networks and processing components.">
+  <meta itemprop="wordCount" content="521">
+
+<title>Io T Arch | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/iot/unit_1/iot_arch/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="active">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Io T Arch</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#iot-architecture-layered-architecture">IoT Architecture (Layered Architecture)</a></li>
+    <li><a href="#1-what-is-iot-architecture-exam-safe-definition">1. What is IoT Architecture? (Exam-safe definition)</a></li>
+    <li><a href="#2-standard-layered-iot-architecture">2. Standard Layered IoT Architecture</a></li>
+    <li><a href="#3-layers-of-iot-architecture-core-content">3. Layers of IoT Architecture (Core content)</a>
+      <ul>
+        <li><a href="#1-perception-layer-sensing-layer">1️⃣ Perception Layer (Sensing Layer)</a></li>
+        <li><a href="#2-transport-layer-network-layer">2️⃣ Transport Layer (Network Layer)</a></li>
+        <li><a href="#3-processing-layer-middleware--cloud-layer">3️⃣ Processing Layer (Middleware / Cloud Layer)</a></li>
+        <li><a href="#4-application-layer">4️⃣ Application Layer</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-exam-diagram-must-draw">4. EXAM DIAGRAM (Must draw)</a>
+      <ul>
+        <li><a href="#simplified-diagram-to-memorize-and-redraw">Simplified diagram to memorize and redraw</a></li>
+        <li><a href="#diagram-rules-in-exam">Diagram rules in exam</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-role-of-middleware-in-iot-architecture-short-but-important">5. Role of Middleware in IoT Architecture (short but important)</a></li>
+    <li><a href="#6-reference-book-mapping-for-confidence">6. Reference Book Mapping (for confidence)</a></li>
+    <li><a href="#7-how-to-write-this-as-a-20-mark-answer">7. How to write this as a 20-mark answer</a></li>
+    <li><a href="#-how-to-remember-this-topic-useful-so-included">🧠 How to REMEMBER this topic (useful, so included)</a>
+      <ul>
+        <li><a href="#-the-snpa-rule">🔑 The “S–N–P–A” Rule</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="iot-architecture-layered-architecture">IoT Architecture (Layered Architecture)<a class="anchor" href="#iot-architecture-layered-architecture">#</a></h2>
+<p>This is a <strong>guaranteed high-weight topic</strong>. It appears:</p>
+<ul>
+<li>directly (“Explain IoT architecture”), or</li>
+<li>indirectly (middleware, security, applications all depend on it)</li>
+</ul>
+<p>If you understand <strong>this one diagram</strong>, half of Unit I becomes easy.</p>
+<hr>
+<h2 id="1-what-is-iot-architecture-exam-safe-definition">1. What is IoT Architecture? (Exam-safe definition)<a class="anchor" href="#1-what-is-iot-architecture-exam-safe-definition">#</a></h2>
+<p><strong>IoT architecture</strong> refers to the <strong>layered structural design</strong> of an IoT system that defines <strong>how data flows</strong> from physical devices to applications through communication networks and processing components.</p>
+<blockquote class='book-hint '>
+<p>Keywords examiners expect:<br>
+<em>layered model, data flow, sensing, communication, processing, application</em></p>
+</blockquote><hr>
+<h2 id="2-standard-layered-iot-architecture">2. Standard Layered IoT Architecture<a class="anchor" href="#2-standard-layered-iot-architecture">#</a></h2>
+<p>Most textbooks (including Zhou) describe IoT using a <strong>layered model</strong>.<br>
+For exams, you should write the <strong>4-layer architecture</strong> (it is the safest).</p>
+<hr>
+<h2 id="3-layers-of-iot-architecture-core-content">3. Layers of IoT Architecture (Core content)<a class="anchor" href="#3-layers-of-iot-architecture-core-content">#</a></h2>
+<h3 id="1-perception-layer-sensing-layer">1️⃣ Perception Layer (Sensing Layer)<a class="anchor" href="#1-perception-layer-sensing-layer">#</a></h3>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Interacts with the <strong>physical world</strong></li>
+</ul>
+<p><strong>Functions:</strong></p>
+<ul>
+<li>
+<p>Sensing physical parameters</p>
+</li>
+<li>
+<p>Data acquisition</p>
+</li>
+</ul>
+<p><strong>Components:</strong></p>
+<ul>
+<li>
+<p>Sensors (temperature, humidity, motion)</p>
+</li>
+<li>
+<p>Actuators</p>
+</li>
+</ul>
+<p>📌 This layer answers: <em>“What is happening?”</em></p>
+<hr>
+<h3 id="2-transport-layer-network-layer">2️⃣ Transport Layer (Network Layer)<a class="anchor" href="#2-transport-layer-network-layer">#</a></h3>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Transfers data from devices to processing systems</li>
+</ul>
+<p><strong>Functions:</strong></p>
+<ul>
+<li>
+<p>Data transmission</p>
+</li>
+<li>
+<p>Device connectivity</p>
+</li>
+</ul>
+<p><strong>Technologies:</strong></p>
+<ul>
+<li>
+<p>Internet</p>
+</li>
+<li>
+<p>Wireless networks</p>
+</li>
+<li>
+<p>Gateways</p>
+</li>
+</ul>
+<p>📌 This layer answers: <em>“How does data move?”</em></p>
+<hr>
+<h3 id="3-processing-layer-middleware--cloud-layer">3️⃣ Processing Layer (Middleware / Cloud Layer)<a class="anchor" href="#3-processing-layer-middleware--cloud-layer">#</a></h3>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Processes and manages IoT data</li>
+</ul>
+<p><strong>Functions:</strong></p>
+<ul>
+<li>
+<p>Data storage</p>
+</li>
+<li>
+<p>Data analytics</p>
+</li>
+<li>
+<p>Device management</p>
+</li>
+<li>
+<p>Middleware services</p>
+</li>
+</ul>
+<p><strong>Where it runs:</strong></p>
+<ul>
+<li>
+<p>Cloud platforms</p>
+</li>
+<li>
+<p>Data centers</p>
+</li>
+</ul>
+<p>📌 This layer answers: <em>“What does the data mean?”</em></p>
+<hr>
+<h3 id="4-application-layer">4️⃣ Application Layer<a class="anchor" href="#4-application-layer">#</a></h3>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Provides services to users</li>
+</ul>
+<p><strong>Functions:</strong></p>
+<ul>
+<li>
+<p>Visualization</p>
+</li>
+<li>
+<p>Monitoring</p>
+</li>
+<li>
+<p>Control</p>
+</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>
+<p>Smart home apps</p>
+</li>
+<li>
+<p>Smart grid dashboards</p>
+</li>
+<li>
+<p>Healthcare monitoring systems</p>
+</li>
+</ul>
+<p>📌 This layer answers: <em>“What does the user see?”</em></p>
+<hr>
+<h2 id="4-exam-diagram-must-draw">4. EXAM DIAGRAM (Must draw)<a class="anchor" href="#4-exam-diagram-must-draw">#</a></h2>
+<h3 id="simplified-diagram-to-memorize-and-redraw">Simplified diagram to memorize and redraw<a class="anchor" href="#simplified-diagram-to-memorize-and-redraw">#</a></h3>
+<p><code>+-------------------+ |  Application      | |  Layer            | +-------------------+          ↑ +-------------------+ |  Processing /     | |  Middleware Layer | +-------------------+          ↑ +-------------------+ |  Transport /      | |  Network Layer    | +-------------------+          ↑ +-------------------+ |  Perception       | |  (Sensing) Layer  | +-------------------+</code></p>
+<h3 id="diagram-rules-in-exam">Diagram rules in exam<a class="anchor" href="#diagram-rules-in-exam">#</a></h3>
+<ul>
+<li>
+<p>Draw <strong>top-down</strong> or <strong>bottom-up</strong></p>
+</li>
+<li>
+<p>Label <strong>every layer</strong></p>
+</li>
+<li>
+<p>Use arrows to show <strong>data flow</strong></p>
+</li>
+</ul>
+<p>This diagram alone can fetch <strong>4–5 marks</strong> if neat.</p>
+<hr>
+<h2 id="5-role-of-middleware-in-iot-architecture-short-but-important">5. Role of Middleware in IoT Architecture (short but important)<a class="anchor" href="#5-role-of-middleware-in-iot-architecture-short-but-important">#</a></h2>
+<p>Middleware resides in the <strong>processing layer</strong> and provides:</p>
+<ul>
+<li>
+<p>Device abstraction</p>
+</li>
+<li>
+<p>Interoperability between heterogeneous devices</p>
+</li>
+<li>
+<p>Data management</p>
+</li>
+<li>
+<p>Security services</p>
+</li>
+</ul>
+<p>📌 This point connects directly to <strong>later questions</strong> on middleware.</p>
+<hr>
+<h2 id="6-reference-book-mapping-for-confidence">6. Reference Book Mapping (for confidence)<a class="anchor" href="#6-reference-book-mapping-for-confidence">#</a></h2>
+<p>📘 <strong>Honbo Zhou – <em>The Internet of Things in the Cloud</em></strong></p>
+<ul>
+<li>
+<p>Chapter 2: IoT Architecture Overview</p>
+</li>
+<li>
+<p>Chapter 3: Middleware-centric architecture</p>
+</li>
+<li>
+<p>Figures show <strong>device → gateway → cloud → application</strong> flow</p>
+</li>
+</ul>
+<p>You don’t need to open it unless you want reassurance.</p>
+<hr>
+<h2 id="7-how-to-write-this-as-a-20-mark-answer">7. How to write this as a 20-mark answer<a class="anchor" href="#7-how-to-write-this-as-a-20-mark-answer">#</a></h2>
+<p><strong>Ideal structure:</strong></p>
+<ol>
+<li>
+<p>Definition of IoT architecture</p>
+</li>
+<li>
+<p>Brief explanation of layered approach</p>
+</li>
+<li>
+<p>Explain each layer (4 subheadings)</p>
+</li>
+<li>
+<p>Neat architecture diagram</p>
+</li>
+<li>
+<p>1–2 lines on middleware importance</p>
+</li>
+<li>
+<p>Short conclusion</p>
+</li>
+</ol>
+<p><strong>Safe conclusion line:</strong></p>
+<blockquote class='book-hint '>
+<p>Thus, the layered IoT architecture enables scalable, modular, and efficient integration of physical devices with cloud-based applications.</p>
+</blockquote><hr>
+<h2 id="-how-to-remember-this-topic-useful-so-included">🧠 How to REMEMBER this topic (useful, so included)<a class="anchor" href="#-how-to-remember-this-topic-useful-so-included">#</a></h2>
+<p>This topic has a <strong>very good memory hack</strong>.</p>
+<h3 id="-the-snpa-rule">🔑 The “S–N–P–A” Rule<a class="anchor" href="#-the-snpa-rule">#</a></h3>
+<p>Think of IoT as a <strong>journey of data</strong>:</p>
+<blockquote class='book-hint '>
+<p><strong>S → N → P → A</strong></p>
+</blockquote><ul>
+<li>
+<p><strong>S</strong> → Sense (Perception layer)</p>
+</li>
+<li>
+<p><strong>N</strong> → Network (Transport layer)</p>
+</li>
+<li>
+<p><strong>P</strong> → Process (Processing / Middleware layer)</p>
+</li>
+<li>
+<p><strong>A</strong> → App (Application layer)</p>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/iot/unit_1/iot/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Iot</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/iot/unit_1/iot_unit_1/" class="flex align-center">
+        <span>Iot Unit 1</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#iot-architecture-layered-architecture">IoT Architecture (Layered Architecture)</a></li>
+    <li><a href="#1-what-is-iot-architecture-exam-safe-definition">1. What is IoT Architecture? (Exam-safe definition)</a></li>
+    <li><a href="#2-standard-layered-iot-architecture">2. Standard Layered IoT Architecture</a></li>
+    <li><a href="#3-layers-of-iot-architecture-core-content">3. Layers of IoT Architecture (Core content)</a>
+      <ul>
+        <li><a href="#1-perception-layer-sensing-layer">1️⃣ Perception Layer (Sensing Layer)</a></li>
+        <li><a href="#2-transport-layer-network-layer">2️⃣ Transport Layer (Network Layer)</a></li>
+        <li><a href="#3-processing-layer-middleware--cloud-layer">3️⃣ Processing Layer (Middleware / Cloud Layer)</a></li>
+        <li><a href="#4-application-layer">4️⃣ Application Layer</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-exam-diagram-must-draw">4. EXAM DIAGRAM (Must draw)</a>
+      <ul>
+        <li><a href="#simplified-diagram-to-memorize-and-redraw">Simplified diagram to memorize and redraw</a></li>
+        <li><a href="#diagram-rules-in-exam">Diagram rules in exam</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-role-of-middleware-in-iot-architecture-short-but-important">5. Role of Middleware in IoT Architecture (short but important)</a></li>
+    <li><a href="#6-reference-book-mapping-for-confidence">6. Reference Book Mapping (for confidence)</a></li>
+    <li><a href="#7-how-to-write-this-as-a-20-mark-answer">7. How to write this as a 20-mark answer</a></li>
+    <li><a href="#-how-to-remember-this-topic-useful-so-included">🧠 How to REMEMBER this topic (useful, so included)</a>
+      <ul>
+        <li><a href="#-the-snpa-rule">🔑 The “S–N–P–A” Rule</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

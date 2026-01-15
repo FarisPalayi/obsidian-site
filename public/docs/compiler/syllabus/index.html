@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Compiler Design Syllabus##Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/compiler/syllabus/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Compiler Design Syllabus##Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="Compiler Design Syllabus##Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis">
+  <meta itemprop="wordCount" content="285">
+
+<title>Syllabus | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/compiler/syllabus/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="active">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Syllabus</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="compiler-design-syllabus">Compiler Design Syllabus<a class="anchor" href="#compiler-design-syllabus">#</a></h1>
+<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Introduction to Compiling
+<ul>
+<li><input disabled="" type="checkbox"> Definition of compiler</li>
+<li><input disabled="" type="checkbox"> Translator</li>
+<li><input disabled="" type="checkbox"> Interpreter</li>
+<li><input disabled="" type="checkbox"> Analysis of the source program</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Phases of a compiler</li>
+<li><input disabled="" type="checkbox"> Compiler construction tools</li>
+<li><input disabled="" type="checkbox"> Programming language basics</li>
+<li><input disabled="" type="checkbox"> Lexical analysis
+<ul>
+<li><input disabled="" type="checkbox"> Role of lexical analyzer</li>
+<li><input disabled="" type="checkbox"> Input buffering</li>
+<li><input disabled="" type="checkbox"> Specification of tokens</li>
+<li><input disabled="" type="checkbox"> Recognition of tokens using finite automata</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Regular expressions and finite automata
+<ul>
+<li><input disabled="" type="checkbox"> Conversion from NFA to DFA</li>
+<li><input disabled="" type="checkbox"> Regular expression to NFA</li>
+</ul>
+</li>
+</ul>
+<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Syntax analysis
+<ul>
+<li><input disabled="" type="checkbox"> Role of parser</li>
+<li><input disabled="" type="checkbox"> Error handling and recovery</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Parsing concepts
+<ul>
+<li><input disabled="" type="checkbox"> Definitions of parsing</li>
+<li><input disabled="" type="checkbox"> Top-down parsing</li>
+<li><input disabled="" type="checkbox"> Bottom-up parsing</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Context-free grammars
+<ul>
+<li><input disabled="" type="checkbox"> Derivations</li>
+<li><input disabled="" type="checkbox"> Parse tree</li>
+<li><input disabled="" type="checkbox"> Ambiguity</li>
+<li><input disabled="" type="checkbox"> Associativity and precedence of operators</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <del>Top-down parsing techniques</del>
+<ul>
+<li><input disabled="" type="checkbox"> Recursive descent parsing</li>
+<li><input disabled="" type="checkbox"> LL(1) grammars</li>
+<li><input disabled="" type="checkbox"> Non-recursive predictive parsing</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <del>Bottom-up parsing techniques</del>
+<ul>
+<li><input disabled="" type="checkbox"> Reductions</li>
+<li><input disabled="" type="checkbox"> Handle pruning</li>
+<li><input disabled="" type="checkbox"> Shift-reduce parsing</li>
+<li><input disabled="" type="checkbox"> Operator precedence parsing</li>
+<li><input disabled="" type="checkbox"> Simple LR parsing</li>
+</ul>
+</li>
+</ul>
+<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Syntax-directed translation
+<ul>
+<li><input disabled="" type="checkbox"> Syntax-directed definitions</li>
+<li><input disabled="" type="checkbox"> S-attributed definitions</li>
+<li><input disabled="" type="checkbox"> L-attributed definitions</li>
+<li><input disabled="" type="checkbox"> Bottom-up and top-down translations</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Type checking
+<ul>
+<li><input disabled="" type="checkbox"> Type systems</li>
+<li><input disabled="" type="checkbox"> Specification of a type checker</li>
+<li><input disabled="" type="checkbox"> Symbol table</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Intermediate code generation
+<ul>
+<li><input disabled="" type="checkbox"> Directed acyclic graphs (DAG)</li>
+<li><input disabled="" type="checkbox"> Three-address code
+<ul>
+<li><input disabled="" type="checkbox"> Addresses and instructions</li>
+<li><input disabled="" type="checkbox"> Quadruples</li>
+<li><input disabled="" type="checkbox"> Triples</li>
+<li><input disabled="" type="checkbox"> Indirect triples</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Run-time environments
+<ul>
+<li><input disabled="" type="checkbox"> Storage optimization</li>
+<li><input disabled="" type="checkbox"> Static vs dynamic allocation</li>
+<li><input disabled="" type="checkbox"> Stack allocation of space</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Activation records and procedures
+<ul>
+<li><input disabled="" type="checkbox"> Activation trees and records</li>
+<li><input disabled="" type="checkbox"> Calling sequences</li>
+<li><input disabled="" type="checkbox"> Access to non-local data on the stack</li>
+<li><input disabled="" type="checkbox"> Data access without nested procedures</li>
+<li><input disabled="" type="checkbox"> Issues with nested procedures</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Heap management
+<ul>
+<li><input disabled="" type="checkbox"> The memory manager</li>
+<li><input disabled="" type="checkbox"> The memory hierarchy</li>
+</ul>
+</li>
+</ul>
+<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Code generation
+<ul>
+<li><input disabled="" type="checkbox"> Issues in the design of a code generator</li>
+<li><input disabled="" type="checkbox"> The target language</li>
+<li><input disabled="" type="checkbox"> A simple target machine model</li>
+<li><input disabled="" type="checkbox"> Program and instruction costs</li>
+<li><input disabled="" type="checkbox"> Addresses in the target code</li>
+<li><input disabled="" type="checkbox"> Static allocation</li>
+<li><input disabled="" type="checkbox"> Stack allocation</li>
+<li><input disabled="" type="checkbox"> Run-time addresses for names</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Basic blocks and flow graphs
+<ul>
+<li><input disabled="" type="checkbox"> Representation of flow graphs</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Code optimization
+<ul>
+<li><input disabled="" type="checkbox"> Principal sources of optimization</li>
+<li><input disabled="" type="checkbox"> Data flow analysis
+<ul>
+<li><input disabled="" type="checkbox"> Abstraction</li>
+<li><input disabled="" type="checkbox"> Data flow analysis schema</li>
+<li><input disabled="" type="checkbox"> Data flow schemas on basic blocks</li>
+<li><input disabled="" type="checkbox"> Reaching definitions</li>
+<li><input disabled="" type="checkbox"> Live variable analysis</li>
+<li><input disabled="" type="checkbox"> Available expressions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Region-based analysis
+<ul>
+<li><input disabled="" type="checkbox"> Regions</li>
+<li><input disabled="" type="checkbox"> Region hierarchies for reducible flow graphs</li>
+<li><input disabled="" type="checkbox"> Overview of region-based analysis</li>
+</ul>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/compiler/survive/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Survive</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/compiler/unit_1/" class="flex align-center">
+        <span>Unit 1</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

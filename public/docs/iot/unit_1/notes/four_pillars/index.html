@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="[[IOT_UNIT_1]]
+FOUR PILLARS OF IoT#Introduction#The Internet of Things (IoT) is a broad concept covering many technologies and applications. Because of this diversity, earlier classifications of IoT suffered from overlap and ambiguity. To overcome this, Honbo Zhou proposed a four-pillar classification of IoT, which provides a clear, holistic, and non-overlapping framework.
+According to this model, IoT is built on four fundamental technological pillars:
+M2M RFID WSN SCADA These pillars together cover device connectivity, object identification, sensing, and control.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/iot/unit_1/notes/four_pillars/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="[[IOT_UNIT_1]]
+FOUR PILLARS OF IoT#Introduction#The Internet of Things (IoT) is a broad concept covering many technologies and applications. Because of this diversity, earlier classifications of IoT suffered from overlap and ambiguity. To overcome this, Honbo Zhou proposed a four-pillar classification of IoT, which provides a clear, holistic, and non-overlapping framework.
+According to this model, IoT is built on four fundamental technological pillars:
+M2M RFID WSN SCADA These pillars together cover device connectivity, object identification, sensing, and control.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="[[IOT_UNIT_1]]
+FOUR PILLARS OF IoT#Introduction#The Internet of Things (IoT) is a broad concept covering many technologies and applications. Because of this diversity, earlier classifications of IoT suffered from overlap and ambiguity. To overcome this, Honbo Zhou proposed a four-pillar classification of IoT, which provides a clear, holistic, and non-overlapping framework.
+According to this model, IoT is built on four fundamental technological pillars:
+M2M RFID WSN SCADA These pillars together cover device connectivity, object identification, sensing, and control.">
+  <meta itemprop="wordCount" content="674">
+
+<title>Four Pillars | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/iot/unit_1/notes/four_pillars/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="active">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Four Pillars</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#why-four-pillars">Why Four Pillars?</a></li>
+    <li><a href="#diagram-four-pillars-of-iot">Diagram: Four Pillars of IoT</a></li>
+    <li><a href="#1-m2m--internet-of-devices">1. M2M – Internet of Devices</a>
+      <ul>
+        <li><a href="#meaning">Meaning</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#role-in-iot">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-rfid--internet-of-objects">2. RFID – Internet of Objects</a>
+      <ul>
+        <li><a href="#meaning-1">Meaning</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#key-features-1">Key Features</a></li>
+        <li><a href="#examples-1">Examples</a></li>
+        <li><a href="#role-in-iot-1">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-wsn--internet-of-transducers">3. WSN – Internet of Transducers</a>
+      <ul>
+        <li><a href="#meaning-2">Meaning</a></li>
+        <li><a href="#what-it-senses">What it senses</a></li>
+        <li><a href="#key-features-2">Key Features</a></li>
+        <li><a href="#examples-2">Examples</a></li>
+        <li><a href="#role-in-iot-2">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-scada--internet-of-controllers">4. SCADA – Internet of Controllers</a>
+      <ul>
+        <li><a href="#meaning-3">Meaning</a></li>
+        <li><a href="#main-components">Main Components</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#key-features-3">Key Features</a></li>
+        <li><a href="#role-in-iot-3">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#comparison-of-the-four-pillars">Comparison of the Four Pillars</a></li>
+    <li><a href="#integration-of-the-four-pillars">Integration of the Four Pillars</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#memory-hack-very-important-for-exams">Memory Hack (Very Important for Exams)</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p>[[IOT_UNIT_1]]</p>
+<h1 id="four-pillars-of-iot">FOUR PILLARS OF IoT<a class="anchor" href="#four-pillars-of-iot">#</a></h1>
+<h2 id="introduction">Introduction<a class="anchor" href="#introduction">#</a></h2>
+<p>The Internet of Things (IoT) is a broad concept covering many technologies and applications. Because of this diversity, earlier classifications of IoT suffered from <strong>overlap and ambiguity</strong>. To overcome this, <strong>Honbo Zhou</strong> proposed a <strong>four-pillar classification of IoT</strong>, which provides a <strong>clear, holistic, and non-overlapping framework</strong>.</p>
+<p>According to this model, IoT is built on <strong>four fundamental technological pillars</strong>:</p>
+<ul>
+<li>M2M</li>
+<li>RFID</li>
+<li>WSN</li>
+<li>SCADA</li>
+</ul>
+<p>These pillars together cover <strong>device connectivity, object identification, sensing, and control</strong>.</p>
+<hr>
+<h2 id="why-four-pillars">Why Four Pillars?<a class="anchor" href="#why-four-pillars">#</a></h2>
+<ul>
+<li>IoT applications are <strong>vertical and unbalanced</strong> across industries</li>
+<li>Need to identify <strong>common underlying technologies</strong></li>
+<li>Earlier “six-pillar” M2M models had <strong>heavy overlap</strong></li>
+<li>Four pillars are classified based on <strong>networking technology and system behavior</strong>, not just applications</li>
+</ul>
+<p>👉 This makes the model <strong>simpler, clearer, and scalable</strong>.</p>
+<hr>
+<h2 id="diagram-four-pillars-of-iot">Diagram: Four Pillars of IoT<a class="anchor" href="#diagram-four-pillars-of-iot">#</a></h2>
+<pre tabindex="0"><code>                 ┌───────────┐
+                 │   RFID    │
+                 │  Objects  │
+                 └─────┬─────┘
+                       │
+       ┌───────────┐   │   ┌───────────┐
+       │    M2M    │───┼───│    WSN    │
+       │  Devices  │   │   │  Sensors  │
+       └───────────┘   │   └───────────┘
+                       │
+                 ┌─────▼─────┐
+                 │   SCADA   │
+                 │  Control  │
+                 └───────────┘</code></pre><hr>
+<h2 id="1-m2m--internet-of-devices">1. M2M – Internet of Devices<a class="anchor" href="#1-m2m--internet-of-devices">#</a></h2>
+<h3 id="meaning">Meaning<a class="anchor" href="#meaning">#</a></h3>
+<p><strong>Machine-to-Machine (M2M)</strong> refers to <strong>device connectivity technologies</strong> where machines communicate with servers <strong>without human intervention</strong>.</p>
+<p>In this book, M2M is <strong>strictly limited to cellular and wide-area networks</strong> operated by telecom providers.</p>
+<h3 id="how-it-works">How it works<a class="anchor" href="#how-it-works">#</a></h3>
+<ul>
+<li>Device captures an event</li>
+<li>Data sent via cellular/WAN</li>
+<li>Central server processes data</li>
+<li>Action/alert generated</li>
+</ul>
+<h3 id="key-features">Key Features<a class="anchor" href="#key-features">#</a></h3>
+<ul>
+<li>Long-range communication</li>
+<li>Uses cellular, GPRS, WAN</li>
+<li>Operator-managed networks</li>
+<li>Highly scalable</li>
+</ul>
+<h3 id="examples">Examples<a class="anchor" href="#examples">#</a></h3>
+<ul>
+<li>Fleet management</li>
+<li>Smart meters</li>
+<li>Vehicle telematics</li>
+<li>Remote health monitoring</li>
+</ul>
+<h3 id="role-in-iot">Role in IoT<a class="anchor" href="#role-in-iot">#</a></h3>
+<p>M2M provides <strong>large-scale connectivity</strong> and forms the <strong>communication backbone</strong> of IoT.</p>
+<hr>
+<h2 id="2-rfid--internet-of-objects">2. RFID – Internet of Objects<a class="anchor" href="#2-rfid--internet-of-objects">#</a></h2>
+<h3 id="meaning-1">Meaning<a class="anchor" href="#meaning-1">#</a></h3>
+<p><strong>Radio Frequency Identification (RFID)</strong> uses <strong>radio waves</strong> to identify and track physical objects using electronic tags.</p>
+<p>RFID converts <strong>“dumb objects” into digitally identifiable objects</strong>.</p>
+<h3 id="components">Components<a class="anchor" href="#components">#</a></h3>
+<ul>
+<li>RFID tag</li>
+<li>RFID reader</li>
+<li>Backend system</li>
+</ul>
+<h3 id="key-features-1">Key Features<a class="anchor" href="#key-features-1">#</a></h3>
+<ul>
+<li>Identification-centric</li>
+<li>Short-range wireless</li>
+<li>Low power consumption</li>
+<li>No continuous sensing</li>
+</ul>
+<h3 id="examples-1">Examples<a class="anchor" href="#examples-1">#</a></h3>
+<ul>
+<li>Supply chain tracking</li>
+<li>Access cards</li>
+<li>Inventory systems</li>
+<li>Anti-counterfeiting</li>
+</ul>
+<h3 id="role-in-iot-1">Role in IoT<a class="anchor" href="#role-in-iot-1">#</a></h3>
+<p>RFID answers the question:<br>
+👉 <strong>“What object is this?”</strong></p>
+<p>It forms the <strong>identity layer of IoT</strong>.</p>
+<hr>
+<h2 id="3-wsn--internet-of-transducers">3. WSN – Internet of Transducers<a class="anchor" href="#3-wsn--internet-of-transducers">#</a></h2>
+<h3 id="meaning-2">Meaning<a class="anchor" href="#meaning-2">#</a></h3>
+<p>A <strong>Wireless Sensor Network (WSN)</strong> consists of <strong>distributed sensor nodes</strong> that monitor physical or environmental conditions and cooperatively transmit data.</p>
+<p>WSN represents the <strong>sensing layer</strong> of IoT.</p>
+<h3 id="what-it-senses">What it senses<a class="anchor" href="#what-it-senses">#</a></h3>
+<ul>
+<li>Temperature</li>
+<li>Pressure</li>
+<li>Motion</li>
+<li>Humidity</li>
+<li>Pollution</li>
+</ul>
+<h3 id="key-features-2">Key Features<a class="anchor" href="#key-features-2">#</a></h3>
+<ul>
+<li>Short-range wireless mesh networks</li>
+<li>Battery-powered nodes</li>
+<li>High spatial distribution</li>
+<li>Data-centric communication</li>
+</ul>
+<h3 id="examples-2">Examples<a class="anchor" href="#examples-2">#</a></h3>
+<ul>
+<li>Environmental monitoring</li>
+<li>Smart agriculture</li>
+<li>Body sensor networks</li>
+<li>Industrial sensing</li>
+</ul>
+<h3 id="role-in-iot-2">Role in IoT<a class="anchor" href="#role-in-iot-2">#</a></h3>
+<p>WSN answers the question:<br>
+👉 <strong>“What is happening in the physical world?”</strong></p>
+<p>It acts as the <strong>nervous system of IoT</strong>.</p>
+<hr>
+<h2 id="4-scada--internet-of-controllers">4. SCADA – Internet of Controllers<a class="anchor" href="#4-scada--internet-of-controllers">#</a></h2>
+<h3 id="meaning-3">Meaning<a class="anchor" href="#meaning-3">#</a></h3>
+<p><strong>Supervisory Control and Data Acquisition (SCADA)</strong> systems are <strong>closed-loop control systems</strong> used to <strong>monitor and control industrial and infrastructure processes</strong>.</p>
+<p>SCADA represents <strong>control and actuation</strong> in IoT.</p>
+<h3 id="main-components">Main Components<a class="anchor" href="#main-components">#</a></h3>
+<ul>
+<li>Sensors and actuators</li>
+<li>RTUs / PLCs</li>
+<li>Human-Machine Interface (HMI)</li>
+<li>Control servers</li>
+</ul>
+<h3 id="applications">Applications<a class="anchor" href="#applications">#</a></h3>
+<ul>
+<li>Power grids</li>
+<li>Water treatment plants</li>
+<li>Industrial automation</li>
+<li>Smart buildings</li>
+</ul>
+<h3 id="key-features-3">Key Features<a class="anchor" href="#key-features-3">#</a></h3>
+<ul>
+<li>Mostly wired fieldbus networks</li>
+<li>Real-time monitoring and control</li>
+<li>High reliability and safety</li>
+</ul>
+<h3 id="role-in-iot-3">Role in IoT<a class="anchor" href="#role-in-iot-3">#</a></h3>
+<p>SCADA answers the question:<br>
+👉 <strong>“How do we control and optimize systems?”</strong></p>
+<hr>
+<h2 id="comparison-of-the-four-pillars">Comparison of the Four Pillars<a class="anchor" href="#comparison-of-the-four-pillars">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Pillar</th>
+          <th>Focus</th>
+          <th>Network Type</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RFID</td>
+          <td>Identification</td>
+          <td>Short-range wireless</td>
+      </tr>
+      <tr>
+          <td>WSN</td>
+          <td>Sensing</td>
+          <td>Wireless mesh</td>
+      </tr>
+      <tr>
+          <td>M2M</td>
+          <td>Communication</td>
+          <td>Cellular / WAN</td>
+      </tr>
+      <tr>
+          <td>SCADA</td>
+          <td>Control</td>
+          <td>Wired + Wireless</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="integration-of-the-four-pillars">Integration of the Four Pillars<a class="anchor" href="#integration-of-the-four-pillars">#</a></h2>
+<p>The real power of IoT emerges when <strong>all four pillars are integrated</strong> using a <strong>common middleware platform</strong>.</p>
+<ul>
+<li>Middleware acts as the <strong>glue</strong></li>
+<li>Enables data sharing across pillars</li>
+<li>Prevents isolated silos</li>
+<li>Supports scalability and interoperability</li>
+</ul>
+<p>Without integration, IoT systems remain <strong>fragmented and inefficient</strong>.</p>
+<hr>
+<h2 id="conclusion">Conclusion<a class="anchor" href="#conclusion">#</a></h2>
+<p>The <strong>four-pillar model of IoT</strong>—M2M, RFID, WSN, and SCADA—provides a <strong>clear and comprehensive understanding</strong> of IoT technologies. Each pillar plays a <strong>distinct role</strong>, and together they form the <strong>foundation of modern IoT systems</strong>. This model is essential for <strong>designing, analyzing, and deploying scalable IoT architectures</strong>.</p>
+<hr>
+<h2 id="memory-hack-very-important-for-exams">Memory Hack (Very Important for Exams)<a class="anchor" href="#memory-hack-very-important-for-exams">#</a></h2>
+<p><strong>“DISC”</strong></p>
+<ul>
+<li><strong>D</strong>evices → M2M</li>
+<li><strong>I</strong>dentity → RFID</li>
+<li><strong>S</strong>ensing → WSN</li>
+<li><strong>C</strong>ontrol → SCADA</li>
+</ul>
+<p>If you want, next I can:</p>
+<ul>
+<li>Compress this into a <strong>1.5-page ultra-revision version</strong></li>
+<li>Predict <strong>exact exam questions</strong> from this chapter</li>
+<li>Create <strong>diagram-only notes</strong> for last-day study</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/iot/unit_1/notes/dna/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Dna</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/iot/unit_1/notes/iot_def/" class="flex align-center">
+        <span>Io T Def</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#why-four-pillars">Why Four Pillars?</a></li>
+    <li><a href="#diagram-four-pillars-of-iot">Diagram: Four Pillars of IoT</a></li>
+    <li><a href="#1-m2m--internet-of-devices">1. M2M – Internet of Devices</a>
+      <ul>
+        <li><a href="#meaning">Meaning</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#role-in-iot">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-rfid--internet-of-objects">2. RFID – Internet of Objects</a>
+      <ul>
+        <li><a href="#meaning-1">Meaning</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#key-features-1">Key Features</a></li>
+        <li><a href="#examples-1">Examples</a></li>
+        <li><a href="#role-in-iot-1">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-wsn--internet-of-transducers">3. WSN – Internet of Transducers</a>
+      <ul>
+        <li><a href="#meaning-2">Meaning</a></li>
+        <li><a href="#what-it-senses">What it senses</a></li>
+        <li><a href="#key-features-2">Key Features</a></li>
+        <li><a href="#examples-2">Examples</a></li>
+        <li><a href="#role-in-iot-2">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-scada--internet-of-controllers">4. SCADA – Internet of Controllers</a>
+      <ul>
+        <li><a href="#meaning-3">Meaning</a></li>
+        <li><a href="#main-components">Main Components</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#key-features-3">Key Features</a></li>
+        <li><a href="#role-in-iot-3">Role in IoT</a></li>
+      </ul>
+    </li>
+    <li><a href="#comparison-of-the-four-pillars">Comparison of the Four Pillars</a></li>
+    <li><a href="#integration-of-the-four-pillars">Integration of the Four Pillars</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#memory-hack-very-important-for-exams">Memory Hack (Very Important for Exams)</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

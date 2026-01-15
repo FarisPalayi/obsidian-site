@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Topics#Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA Introduction to Compiling#A type of translator Define compiler Give language examples: C, C&#43;&#43;, Rust, … Draw 2 diagrams: compiler pass &amp; source program pass 2 parts: synthesis &amp; analysis Structure of a compiler (6 phases) describe each draw diagram Definition of compiler#Same as above Translator#A translator is a program that converts a program written in one language into another.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/compiler/unit_1/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Topics#Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA Introduction to Compiling#A type of translator Define compiler Give language examples: C, C&#43;&#43;, Rust, … Draw 2 diagrams: compiler pass &amp; source program pass 2 parts: synthesis &amp; analysis Structure of a compiler (6 phases) describe each draw diagram Definition of compiler#Same as above Translator#A translator is a program that converts a program written in one language into another.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="Topics#Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA Introduction to Compiling#A type of translator Define compiler Give language examples: C, C&#43;&#43;, Rust, … Draw 2 diagrams: compiler pass &amp; source program pass 2 parts: synthesis &amp; analysis Structure of a compiler (6 phases) describe each draw diagram Definition of compiler#Same as above Translator#A translator is a program that converts a program written in one language into another.">
+  <meta itemprop="wordCount" content="1092">
+
+<title>Unit 1 | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/compiler/unit_1/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="active">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Unit 1</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#translator">Translator</a></li>
+    <li><a href="#interpreter">Interpreter</a></li>
+    <li><a href="#analysis-of-the-source-program">Analysis of the source program</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#role-of-lexical-analyzer">Role of lexical analyzer</a></li>
+    <li><a href="#input-buffering">Input buffering</a></li>
+    <li><a href="#specification-of-tokens">Specification of tokens</a></li>
+    <li><a href="#recognition-of-tokens-using-finite-automata">Recognition of tokens using finite automata</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#conversion-from-nfa-to-dfa">Conversion from NFA to DFA</a></li>
+    <li><a href="#regular-expression-to-nfa">Regular expression to NFA</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="topics">Topics<a class="anchor" href="#topics">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Introduction to Compiling</li>
+<li><input disabled="" type="checkbox"> Definition of compiler
+<ul>
+<li><input disabled="" type="checkbox"> Translator</li>
+<li><input disabled="" type="checkbox"> Interpreter</li>
+<li><input disabled="" type="checkbox"> Analysis of the source program</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Phases of a compiler</li>
+<li><input disabled="" type="checkbox"> Compiler construction tools</li>
+<li><input disabled="" type="checkbox"> Programming language basics</li>
+<li><input disabled="" type="checkbox"> Lexical analysis
+<ul>
+<li><input disabled="" type="checkbox"> Role of lexical analyzer</li>
+<li><input disabled="" type="checkbox"> Input buffering</li>
+<li><input disabled="" type="checkbox"> Specification of tokens</li>
+<li><input disabled="" type="checkbox"> Recognition of tokens using finite automata</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Regular expressions and finite automata
+<ul>
+<li><input disabled="" type="checkbox"> Conversion from NFA to DFA</li>
+<li><input disabled="" type="checkbox"> Regular expression to NFA</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="introduction-to-compiling">Introduction to Compiling<a class="anchor" href="#introduction-to-compiling">#</a></h1>
+<ul>
+<li>A type of translator</li>
+<li>Define compiler</li>
+<li>Give language examples: C, C++, Rust, &hellip;</li>
+<li>Draw 2 diagrams: compiler pass &amp; source program pass</li>
+<li>2 parts: synthesis &amp; analysis</li>
+<li>Structure of a compiler (6 phases)
+<ul>
+<li>describe each</li>
+<li>draw diagram</li>
+</ul>
+</li>
+</ul>
+<h1 id="definition-of-compiler">Definition of compiler<a class="anchor" href="#definition-of-compiler">#</a></h1>
+<ul>
+<li>Same as above</li>
+</ul>
+<h2 id="translator">Translator<a class="anchor" href="#translator">#</a></h2>
+<blockquote class='book-hint '>
+<blockquote class='book-hint '>
+<p>A translator is a program that converts a program written in one language into another.</p>
+</blockquote></blockquote><ul>
+<li>Types:
+<ol>
+<li>Compilers</li>
+<li>Interpreters</li>
+<li>Assemblers</li>
+</ol>
+<ul>
+<li>Hybrid models such as Java&rsquo;s language processor exist</li>
+</ul>
+</li>
+<li>Draw language processor diagram. refer table below</li>
+<li>Language processors:</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Preprocessor</th>
+          <th>Compiler</th>
+          <th>Assembler</th>
+          <th>Link/Loader</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Pure HLL</td>
+          <td>Assembly Code</td>
+          <td>Relocatable Machine code</td>
+          <td>Machine code</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="interpreter">Interpreter<a class="anchor" href="#interpreter">#</a></h2>
+<ul>
+<li>Define</li>
+<li>Draw diagram</li>
+<li>Example: Python, JS, Ruby, PHP</li>
+</ul>
+<h2 id="analysis-of-the-source-program">Analysis of the source program<a class="anchor" href="#analysis-of-the-source-program">#</a></h2>
+<ul>
+<li>Analyzed in stages for:
+<ul>
+<li>Error detection</li>
+<li>understand Structure</li>
+<li>generate machine code</li>
+</ul>
+</li>
+<li>Analyzed in 3 phases:
+<ol>
+<li>Linear analysis (Lexical)
+<ul>
+<li>Source string is read ltr</li>
+<li>Grouped to tokens</li>
+</ul>
+</li>
+<li>Hierarchical analysis (Syntactical)
+<ul>
+<li>Tokens are grouped hierarchically</li>
+<li>Checks for syntax errors</li>
+</ul>
+</li>
+<li>Semantic analysis
+<ul>
+<li>Checks for the correctness and meaning</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>This is achieved by the phases of compiler
+<ul>
+<li>Mention the analysis part of the compiler</li>
+</ul>
+</li>
+</ul>
+<h1 id="phases-of-a-compiler">Phases of a compiler<a class="anchor" href="#phases-of-a-compiler">#</a></h1>
+<p>Analysis:</p>
+<ol>
+<li>Lexical Analysis</li>
+<li>Syntax Analysis</li>
+<li>Semantic Analysis
+Synthesis:</li>
+<li>Intermediate Code Representation</li>
+<li>Code Optimization</li>
+<li>Target Code Generation</li>
+</ol>
+<ul>
+<li>Symbol table</li>
+<li>Error handler</li>
+</ul>
+<h1 id="compiler-construction-tools">Compiler construction tools<a class="anchor" href="#compiler-construction-tools">#</a></h1>
+<ol>
+<li>Scanner generators
+<ul>
+<li>produce <strong>lexical analyzers</strong> from a <strong>regular-expression description of the tokens</strong> of a language</li>
+<li>Ex: Lex</li>
+</ul>
+</li>
+<li>Parser generators
+<ul>
+<li>produce <strong>syntax analyzers</strong> from a <strong>grammatical description of the programming language</strong></li>
+<li>Ex: YACC</li>
+</ul>
+</li>
+<li>Syntax-directed translation engines
+<ul>
+<li>produce <strong>collections of routines for walking a parse tre</strong>e and <strong>generating intermediate code</strong></li>
+</ul>
+</li>
+<li>Code-generator generators
+<ul>
+<li>produce a <strong>code generator</strong> from a <strong>collection of rules for translating each operation of the intermediate language into the machine language for a target machine</strong></li>
+</ul>
+</li>
+<li>Data-flow analysis engines
+<ul>
+<li>does the <strong>gathering of information about how values are transmitted from one part of a program to each other part.</strong></li>
+<li>Data-flow analysis is a key part of code optimization</li>
+</ul>
+</li>
+<li>Compiler-construction toolkits
+<ul>
+<li>provides an <strong>integrated set of routines</strong> for constructing various phases of a compiler.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Some examples of compiler construction tools:
+<ul>
+<li>LLVM</li>
+<li>Lance compiler</li>
+</ul>
+</li>
+</ul>
+<h1 id="programming-language-basics">Programming language basics<a class="anchor" href="#programming-language-basics">#</a></h1>
+<ol>
+<li>The static/dynamic distinction:
+<ul>
+<li>static policy - policy decided at compile time by a language</li>
+<li>dynamic policy - decided at runtime</li>
+<li>example: static scope &amp; dynamic scope</li>
+</ul>
+</li>
+<li>Environment and States
+<ul>
+<li>Two-stage mapping from names to values</li>
+<li>names -&gt; locations(variables) -&gt; values</li>
+<li>environment - mapping from names to locations in the store</li>
+<li>state - mapping from locations in store to their values</li>
+</ul>
+</li>
+<li>Static scope &amp; Block structure
+<ul>
+<li>Static scope =&gt; scope rules are based on program structure</li>
+<li>Explicit control over scope =&gt; access specifiers</li>
+<li>Uses <strong>blocks</strong> which is the grouping of declarations and statements</li>
+</ul>
+</li>
+<li>Explicit access control
+<ul>
+<li>Access specifiers</li>
+</ul>
+</li>
+<li>Dynamic Scope
+<ul>
+<li>a use of name x refers to the declaration of x in the most recently called, not-yet-terminated, procedure with such a declaration</li>
+<li>ex: macro expansion in C, method resolution in OOP</li>
+</ul>
+</li>
+<li>Parameter passing mechanisms
+<ol>
+<li>Call-by-Value</li>
+<li>Call-by-Reference</li>
+<li>Call-by-Name</li>
+</ol>
+</li>
+<li>Aliasing
+<ul>
+<li>consequence of call-by-reference where two formal parameters referring to the same location</li>
+</ul>
+</li>
+</ol>
+<h1 id="lexical-analysis">Lexical analysis<a class="anchor" href="#lexical-analysis">#</a></h1>
+<ul>
+<li>a.k.a Scanning</li>
+<li>Reads the stream of characters of the source program and groups the characters into meaningful sequences called <strong>lexemes</strong></li>
+<li>For each lexeme, it produces a <strong>token</strong> as output:
+<ul>
+<li>&lt;token-name, attribute-value&gt;</li>
+<li>ex: &lt;id, 1&gt;</li>
+</ul>
+</li>
+<li>Which is passed to the next phase</li>
+<li>Lexical analyzer generator: Lex (or Flex)</li>
+<li>Uses <strong>regex</strong> to specify lexeme patterns</li>
+</ul>
+<h2 id="role-of-lexical-analyzer">Role of lexical analyzer<a class="anchor" href="#role-of-lexical-analyzer">#</a></h2>
+<ul>
+<li>Lexemes</li>
+<li>Tokens</li>
+<li>Interacts with symbol table</li>
+<li>Draw diagram: page 110</li>
+<li>Removes comments and whitespaces</li>
+<li>Helps in error generation</li>
+<li>Has two steps:
+<ol>
+<li>Scanning:
+<ul>
+<li>Simpler</li>
+<li>Deletion of comments</li>
+<li>Compaction of consecutive whitespaces</li>
+</ul>
+</li>
+<li>Lexical Analysis
+<ul>
+<li>More complex</li>
+<li>Produces tokens</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Uses DFA for pattern matching</li>
+<li>Define Tokens, Patterns, Lexemes</li>
+<li>Attributes for tokens</li>
+<li>Lexical errors
+<ul>
+<li>Lexical analyzer doesn&rsquo;t do a lot of error detection</li>
+<li>But when no patterns not found <strong>&ldquo;panic mode&rdquo;</strong> recovery is used where successive characters are deleted till a pattern is matched.</li>
+</ul>
+</li>
+</ul>
+<h2 id="input-buffering">Input buffering<a class="anchor" href="#input-buffering">#</a></h2>
+<blockquote class='book-hint '>
+<blockquote class='book-hint '>
+<p>Input buffering is a technique in which the source program is read into two memory buffers so that the lexical analyzer can scan characters efficiently without frequent disk I/O, using pointers to identify lexemes.</p>
+</blockquote></blockquote><ul>
+<li>Disk access is slow compared to RAM</li>
+<li>Thus reading character-by-character will be very slow</li>
+<li>Thus, input buffering is used to <em>speed up</em> this</li>
+<li>Lexers needs to lookahead one or more symbols:
+<ul>
+<li>ex: = could be the beginning of ==</li>
+</ul>
+</li>
+<li>Thus a <strong>2-buffer scheme</strong> is deviced to deal large lookaheads</li>
+<li>It uses 2 buffers:
+<ol>
+<li>one for current input</li>
+<li>one for lookahead</li>
+</ol>
+</li>
+<li>Both buffers have the same size usually the size of disc block</li>
+<li>It reads big chunks of file into memory and lexer works on it</li>
+<li>Sentinel - each buffer has a special marker at the end <strong>EOF</strong></li>
+<li>2 pointers are used:
+<ul>
+<li>lexemeBegin: where current token starts</li>
+<li>forward: scan ahead to the find the end of token(til a pattern match is found)</li>
+</ul>
+</li>
+<li>Draw diagram: page 115</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>_________________________
+</span></span><span style="display:flex;"><span>| E = M <span style="font-style:italic">* | C *</span> * 2 EOF |
+</span></span><span style="display:flex;"><span>-------------------------
+</span></span><span style="display:flex;"><span>              ^   ^
+</span></span><span style="display:flex;"><span>              |   |
+</span></span><span style="display:flex;"><span>    lexemeBegin  forward</span></span></code></pre></div><h2 id="specification-of-tokens">Specification of tokens<a class="anchor" href="#specification-of-tokens">#</a></h2>
+<ul>
+<li>
+<p>Strings &amp; Languages</p>
+<ul>
+<li>Alphabets (∑)
+<ul>
+<li>Finite set of symbols:</li>
+<li>{0, 1} -&gt; Binary Alphabets</li>
+<li>{0, 9} -&gt; Digits</li>
+<li>{a-z} {A-Z} -&gt; letters</li>
+<li>ASCII, Unicode</li>
+</ul>
+</li>
+<li>Strings -&gt; Finite set of symbols drawn from alphabets
+<ul>
+<li>length of str -&gt; no.of occurrence of symbols</li>
+<li>empty string -&gt; ε</li>
+</ul>
+</li>
+<li>Language -&gt; Finite set of strings over some alphabet
+<ul>
+<li>ex: x &amp; y are strings</li>
+<li>concatenation -&gt; xy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Operations on Languages: page 120</p>
+<ol>
+<li>Union - union of sets: x is in a <em>or</em> x is in b</li>
+<li>Concatenation - x is in a <em>and</em> x is in b</li>
+<li>Closure(L^i): set of L of of i length
+i. Kleen-closure(L^*): concatenate L zero or more times
+ii. Positive closure(L^+): one or more occurrence of L</li>
+</ol>
+</li>
+<li>
+<p>Regular Expressions</p>
+<ul>
+<li>It is a formal way to describe a set of strings.</li>
+<li>Used to describe tokens such identifiers, operators, etc.</li>
+<li><code>letter_ ( letter | digit)*</code></li>
+<li>| -&gt; union</li>
+<li>() -&gt; to group subexpressions</li>
+<li>
+<ul>
+<li>-&gt; zero or more occurrence of</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>-&gt; one  or more occurrent of</li>
+</ul>
+</li>
+<li>_ -&gt; concatenation</li>
+<li>ε → Represents empty string</li>
+<li>Regex has operator precedence</li>
+</ul>
+</li>
+<li>
+<p>Regular Definitions</p>
+</li>
+</ul>
+<h2 id="recognition-of-tokens-using-finite-automata">Recognition of tokens using finite automata<a class="anchor" href="#recognition-of-tokens-using-finite-automata">#</a></h2>
+<ul>
+<li>Transition Diagram</li>
+<li>Finite Automata
+<ol>
+<li>NFA
+<ul>
+<li>Can have multiple transitions</li>
+<li>Can have ε (empty) moves</li>
+<li>Q * ∑ -&gt; 2^Q</li>
+</ul>
+</li>
+<li>DFA
+<ul>
+<li>One transition for each symbol</li>
+<li>No ε moves</li>
+<li>Q * ∑ -&gt; Q</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="regular-expressions-and-finite-automata">Regular expressions and finite automata<a class="anchor" href="#regular-expressions-and-finite-automata">#</a></h1>
+<h2 id="conversion-from-nfa-to-dfa">Conversion from NFA to DFA<a class="anchor" href="#conversion-from-nfa-to-dfa">#</a></h2>
+<ul>
+<li>Subset construction</li>
+</ul>
+<h2 id="regular-expression-to-nfa">Regular expression to NFA<a class="anchor" href="#regular-expression-to-nfa">#</a></h2>
+<ul>
+<li>Thompson&rsquo;s construction</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/compiler/syllabus/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Syllabus</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/compiler/unit_2/" class="flex align-center">
+        <span>Unit 2</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#translator">Translator</a></li>
+    <li><a href="#interpreter">Interpreter</a></li>
+    <li><a href="#analysis-of-the-source-program">Analysis of the source program</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#role-of-lexical-analyzer">Role of lexical analyzer</a></li>
+    <li><a href="#input-buffering">Input buffering</a></li>
+    <li><a href="#specification-of-tokens">Specification of tokens</a></li>
+    <li><a href="#recognition-of-tokens-using-finite-automata">Recognition of tokens using finite automata</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#conversion-from-nfa-to-dfa">Conversion from NFA to DFA</a></li>
+    <li><a href="#regular-expression-to-nfa">Regular expression to NFA</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Topics#Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing Context-free Grammar#Terminals Non-terminals Productions: a -&gt; b (N∪T) Start symbol (A special non-terminal) $$ G(N,T,P,S) $$
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/compiler/unit_2/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Topics#Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing Context-free Grammar#Terminals Non-terminals Productions: a -&gt; b (N∪T) Start symbol (A special non-terminal) $$ G(N,T,P,S) $$">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="Topics#Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing Context-free Grammar#Terminals Non-terminals Productions: a -&gt; b (N∪T) Start symbol (A special non-terminal) $$ G(N,T,P,S) $$">
+  <meta itemprop="wordCount" content="600">
+
+<title>Unit 2 | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/compiler/unit_2/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="active">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Unit 2</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-top-down-approach">1. Top-down approach</a></li>
+    <li><a href="#2-bottom-up-approach">2. Bottom-up approach</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ll1">LL(1)</a>
+      <ul>
+        <li><a href="#first">FIRST()</a></li>
+        <li><a href="#follow">FOLLOW()</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="topics">Topics<a class="anchor" href="#topics">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Syntax analysis
+<ul>
+<li><input disabled="" type="checkbox"> Role of parser</li>
+<li><input disabled="" type="checkbox"> Error handling and recovery</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Parsing concepts
+<ul>
+<li><input disabled="" type="checkbox"> Definitions of parsing</li>
+<li><input disabled="" type="checkbox"> Top-down parsing</li>
+<li><input disabled="" type="checkbox"> Bottom-up parsing</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Context-free grammars
+<ul>
+<li><input disabled="" type="checkbox"> Derivations</li>
+<li><input disabled="" type="checkbox"> Parse tree</li>
+<li><input disabled="" type="checkbox"> Ambiguity</li>
+<li><input disabled="" type="checkbox"> Associativity and precedence of operators</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Top-down parsing techniques
+<ul>
+<li><input disabled="" type="checkbox"> Recursive descent parsing</li>
+<li><input disabled="" type="checkbox"> LL(1) grammars</li>
+<li><input disabled="" type="checkbox"> Non-recursive predictive parsing</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Bottom-up parsing techniques
+<ul>
+<li><input disabled="" type="checkbox"> Reductions</li>
+<li><input disabled="" type="checkbox"> Handle pruning</li>
+<li><input disabled="" type="checkbox"> Shift-reduce parsing</li>
+<li><input disabled="" type="checkbox"> Operator precedence parsing</li>
+<li><input disabled="" type="checkbox"> Simple LR parsing</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="context-free-grammar">Context-free Grammar<a class="anchor" href="#context-free-grammar">#</a></h1>
+<ol>
+<li>Terminals</li>
+<li>Non-terminals</li>
+<li>Productions: a -&gt; b (N∪T)</li>
+<li>Start symbol (A special non-terminal)</li>
+</ol>
+<p>$$ G(N,T,P,S) $$</p>
+<ul>
+<li>For solving left associativity rule violation, left-recursive grammar can be used</li>
+<li>In the parse tree, the higher precedence derivation should take place at the lower levels. otherwise it causes precedence rule violation</li>
+<li>Except for Operator precedence parser, all the parsers need right recursive grammar</li>
+</ul>
+<h1 id="left-recursive-grammar">Left Recursive Grammar:<a class="anchor" href="#left-recursive-grammar">#</a></h1>
+<p>$$ A -&gt; Aα | β $$</p>
+<ul>
+<li>Left recursion gets stuck in an infinite loop in top down parsers</li>
+<li>Which gives an output with the pattern:
+$$ A =&gt; βα* $$</li>
+</ul>
+<h1 id="right-recursive-grammar">Right Recursive Grammar:<a class="anchor" href="#right-recursive-grammar">#</a></h1>
+<p>$$ A -&gt; αA | β $$</p>
+<ul>
+<li>Output pattern:
+$$ A =&gt; α*β $$</li>
+</ul>
+<h1 id="conversion-of-left---right">Conversion of Left -&gt; Right<a class="anchor" href="#conversion-of-left---right">#</a></h1>
+<p>$$ A -&gt; Aα | β $$
+This can be turned to Right recursive grammar by:
+$$ A -&gt; βA&rsquo; $$
+$$ A&rsquo; -&gt; αA&rsquo; | ε $$</p>
+<h1 id="non-deterministic-cfg">Non-Deterministic CFG<a class="anchor" href="#non-deterministic-cfg">#</a></h1>
+<ul>
+<li>Has <strong>common prefixes</strong> in production rules</li>
+<li>They lead to backtracking in top-down parsers. Thus, <strong>left factoring</strong> is done</li>
+<li>Where the elements after the common prefix is factored out to a new production rule
+$$ 1. A -&gt; ab $$
+$$ 2. A -&gt; ac $$
+$$ 3. A -&gt; ad $$</li>
+<li>This grammar is left factored to:
+$$ A -&gt; aA&rsquo; $$
+$$ A&rsquo; -&gt; b | c | d $$</li>
+</ul>
+<hr>
+<h1 id="parser">Parser<a class="anchor" href="#parser">#</a></h1>
+<ul>
+<li>It is a program that generates a parse tree for a string, if the string is generated from the underlying grammar</li>
+<li>Parsing can be done in two ways:
+<ol>
+<li>Top-down approach</li>
+<li>Bottom-up approach</li>
+</ol>
+</li>
+</ul>
+<p><img src="" alt="" /></p>
+<h2 id="1-top-down-approach">1. Top-down approach<a class="anchor" href="#1-top-down-approach">#</a></h2>
+<ul>
+<li>It uses left-most derivation</li>
+<li>They can&rsquo;t handle left recursion</li>
+<li>Also they needs unambigous grammar</li>
+<li>Top-down parsers without backtracking can&rsquo;t handle non-determinism</li>
+</ul>
+<h2 id="2-bottom-up-approach">2. Bottom-up approach<a class="anchor" href="#2-bottom-up-approach">#</a></h2>
+<ul>
+<li>It uses right-most derivation in <strong>reverse</strong></li>
+</ul>
+<h1 id="recursive-descent-parser">Recursive Descent Parser<a class="anchor" href="#recursive-descent-parser">#</a></h1>
+<ul>
+<li>uses lookahead</li>
+</ul>
+<h1 id="predictive-parser">Predictive Parser<a class="anchor" href="#predictive-parser">#</a></h1>
+<h2 id="ll1">LL(1)<a class="anchor" href="#ll1">#</a></h2>
+<p><img src="" alt="" /></p>
+<h3 id="first">FIRST()<a class="anchor" href="#first">#</a></h3>
+<ul>
+<li>Given any non-terminal of a CFG, if we derive all the possible strings from it, the <strong>first terminal(s)</strong> is the FIRST() of the non-terminal</li>
+<li>it includes ε</li>
+<li>It&rsquo;s often helpful to start from the bottom of the production rule to find the FIRST() when trying to find it</li>
+</ul>
+<h3 id="follow">FOLLOW()<a class="anchor" href="#follow">#</a></h3>
+<ul>
+<li>During the process of derivation, the <strong>terminals that could follow</strong> the non-terminal are to be considered as FOLLOW() of the non-terminal</li>
+<li>it doesn&rsquo;t include ε</li>
+<li>FOLLOW() of start symbol is $</li>
+<li>It has 3 cases:
+<ol>
+<li>The <strong>following terminal  symbol</strong> will be selected as FOLLOW</li>
+<li>The <strong>FIRST of the following non-terminal</strong> will be selected as FOLLOW</li>
+<li>If it is the right most in the RHS, the follow of the LHS will be selected</li>
+</ol>
+</li>
+</ul>
+<h4 id="construction-of-ll1-parsing-table">Construction of LL(1) Parsing Table<a class="anchor" href="#construction-of-ll1-parsing-table">#</a></h4>
+<ul>
+<li>Terminals as columns</li>
+<li>Non-terminals as rows
+Rules to follow:</li>
+</ul>
+<ol>
+<li>All the <strong>ε productions</strong> are placed under follow sets</li>
+<li><strong>Remaining productions</strong> are placed under the firsts</li>
+</ol>
+<ul>
+<li>LL(1) parsing table should only have one production rule for each non-terminal corresponding to a terminal. i.e., it&rsquo;s LL(1) grammar. i.e., the table cells can&rsquo;t contain more than one rule.</li>
+<li>Remember, the RHS of a non-terminal will pushed on to the stack in reverse order</li>
+<li>Whenever the input buffer lookahead symbol and the stack item matches, move to the next lookahead symbol</li>
+<li>When a match in the table cell is found, the item is popped off and parse tree is being updated during that.</li>
+<li>The first item in the stack and the last item in the input buffer will be $</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/compiler/unit_1/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Unit 1</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/compiler/unit_3/" class="flex align-center">
+        <span>Unit 3</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-top-down-approach">1. Top-down approach</a></li>
+    <li><a href="#2-bottom-up-approach">2. Bottom-up approach</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ll1">LL(1)</a>
+      <ul>
+        <li><a href="#first">FIRST()</a></li>
+        <li><a href="#follow">FOLLOW()</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="UNIT 1#IoT definition &#43; functional requirements IoT architecture (layers!) Four Pillars of IoT DNA of IoT Web 3.0 view of IoT Middleware for IoT IoT Information Security UNIT 2#Must know protocols#IEEE 802.15.4 ZigBee (architecture &#43; layers) RFID SCADA Modbus KNX Ethernet Cellular Internet access protocol M2M UNIT 3#High-yield questions#WoT vs IoT Two pillars of Web Unified multitier WoT architecture Cloud of Things architecture UNIT 4#Only selective#Business models for IoT Network effects Small world phenomenon Cascading behavior UNIT 5#Smart Grid Electric Vehicle Charging Smart Home (case study) Body Area Network Resource management (clustering, agents) ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/iot/imp_topics/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="UNIT 1#IoT definition &#43; functional requirements IoT architecture (layers!) Four Pillars of IoT DNA of IoT Web 3.0 view of IoT Middleware for IoT IoT Information Security UNIT 2#Must know protocols#IEEE 802.15.4 ZigBee (architecture &#43; layers) RFID SCADA Modbus KNX Ethernet Cellular Internet access protocol M2M UNIT 3#High-yield questions#WoT vs IoT Two pillars of Web Unified multitier WoT architecture Cloud of Things architecture UNIT 4#Only selective#Business models for IoT Network effects Small world phenomenon Cascading behavior UNIT 5#Smart Grid Electric Vehicle Charging Smart Home (case study) Body Area Network Resource management (clustering, agents)">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="UNIT 1#IoT definition &#43; functional requirements IoT architecture (layers!) Four Pillars of IoT DNA of IoT Web 3.0 view of IoT Middleware for IoT IoT Information Security UNIT 2#Must know protocols#IEEE 802.15.4 ZigBee (architecture &#43; layers) RFID SCADA Modbus KNX Ethernet Cellular Internet access protocol M2M UNIT 3#High-yield questions#WoT vs IoT Two pillars of Web Unified multitier WoT architecture Cloud of Things architecture UNIT 4#Only selective#Business models for IoT Network effects Small world phenomenon Cascading behavior UNIT 5#Smart Grid Electric Vehicle Charging Smart Home (case study) Body Area Network Resource management (clustering, agents)">
+  <meta itemprop="wordCount" content="101">
+
+<title>Imp Topics | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/iot/imp_topics/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="active">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Imp Topics</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#must-know-protocols">Must know protocols</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#high-yield-questions">High-yield questions</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#only-selective">Only selective</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="unit-1">UNIT 1<a class="anchor" href="#unit-1">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> IoT definition + functional requirements</li>
+<li><input disabled="" type="checkbox"> IoT architecture (layers!)</li>
+<li><input disabled="" type="checkbox"> Four Pillars of IoT</li>
+<li><input disabled="" type="checkbox"> DNA of IoT</li>
+<li><input disabled="" type="checkbox"> Web 3.0 view of IoT</li>
+<li><input disabled="" type="checkbox"> Middleware for IoT</li>
+<li><input disabled="" type="checkbox"> IoT Information Security</li>
+</ul>
+<h1 id="unit-2">UNIT 2<a class="anchor" href="#unit-2">#</a></h1>
+<h2 id="must-know-protocols">Must know protocols<a class="anchor" href="#must-know-protocols">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> IEEE 802.15.4</li>
+<li><input disabled="" type="checkbox"> ZigBee (architecture + layers)</li>
+<li><input disabled="" type="checkbox"> RFID</li>
+<li><input disabled="" type="checkbox"> SCADA</li>
+<li><input disabled="" type="checkbox"> Modbus</li>
+<li><input disabled="" type="checkbox"> KNX</li>
+<li><input disabled="" type="checkbox"> Ethernet</li>
+<li><input disabled="" type="checkbox"> Cellular Internet access protocol</li>
+<li><input disabled="" type="checkbox"> M2M</li>
+</ul>
+<h1 id="unit-3">UNIT 3<a class="anchor" href="#unit-3">#</a></h1>
+<h2 id="high-yield-questions">High-yield questions<a class="anchor" href="#high-yield-questions">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> WoT vs IoT</li>
+<li><input disabled="" type="checkbox"> Two pillars of Web</li>
+<li><input disabled="" type="checkbox"> Unified multitier WoT architecture</li>
+<li><input disabled="" type="checkbox"> Cloud of Things architecture</li>
+</ul>
+<h1 id="unit-4">UNIT 4<a class="anchor" href="#unit-4">#</a></h1>
+<h2 id="only-selective">Only selective<a class="anchor" href="#only-selective">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Business models for IoT</li>
+<li><input disabled="" type="checkbox"> Network effects</li>
+<li><input disabled="" type="checkbox"> Small world phenomenon</li>
+<li><input disabled="" type="checkbox"> Cascading behavior</li>
+</ul>
+<h1 id="unit-5">UNIT 5<a class="anchor" href="#unit-5">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Smart Grid</li>
+<li><input disabled="" type="checkbox"> Electric Vehicle Charging</li>
+<li><input disabled="" type="checkbox"> Smart Home (case study)</li>
+<li><input disabled="" type="checkbox"> Body Area Network</li>
+<li><input disabled="" type="checkbox"> Resource management (clustering, agents)</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/compiler/unit_5/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Unit 5</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/iot/topics/" class="flex align-center">
+        <span>Topics</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#must-know-protocols">Must know protocols</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#high-yield-questions">High-yield questions</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#only-selective">Only selective</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

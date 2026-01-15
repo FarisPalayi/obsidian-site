@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="UNIT I#Introduction Internet Layers Protocols Packets Services Performance parameters Peer-to peer networks Sensor networks Multimedia IOT Definitions and Functional Requirements Motivation Architecture Web 3.0 View of IoT Ubiquitous IoT Applications Four Pillars of IoT DNA of IoT The Toolkit Approach for End-user Participation in the Internet of Things Middleware for IoT Overview Communication middleware for IoT IoT Information Security UNIT II#IoT protocols Protocol Standardization for IoT Efforts M2M and WSN Protocols SCADA and RFID Protocols Issues with IoT Standardization Unified Data Standards Protocols IEEE 802.15.4 BACNet Protocol point-to-point protocols Ethernet protocals cellular Internet access protocal Machine-to-machine protocal Modbus KNX Zigbee Architecture Network layer APS layer Security UNIT III#Web of Things Web of Things versus Internet of Things Two Pillars of the Web Architecture Standardization for WoT Platform Middleware for WoT Unified Multitier WoT Architecture WoT Portals and Business Intelligence Cloud of Things Grid/SOA and Cloud Computing Cloud Middleware Cloud Standards Cloud Providers and Systems Mobile Cloud Computing The Cloud of Things Architecture UNIT IV#Integrating IOT Integrated Billing Solutions in the IoT Business Models for the IoT Network Dynamics Population Models Information Cascades Network Effects Structural Models Cascading Behavior in Networks The Small World Phenomenon UNIT V#Applications The Role of the IoT for Increased Autonomy and Agility in Collaborative Production Environments Resource Management in the Internet of Things Clustering Synchronization Software Agents Applications Smart Grid Electrical Vehicle Charging Case studies Sensor body-area-network Control of a smart home ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/iot/topics/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="UNIT I#Introduction Internet Layers Protocols Packets Services Performance parameters Peer-to peer networks Sensor networks Multimedia IOT Definitions and Functional Requirements Motivation Architecture Web 3.0 View of IoT Ubiquitous IoT Applications Four Pillars of IoT DNA of IoT The Toolkit Approach for End-user Participation in the Internet of Things Middleware for IoT Overview Communication middleware for IoT IoT Information Security UNIT II#IoT protocols Protocol Standardization for IoT Efforts M2M and WSN Protocols SCADA and RFID Protocols Issues with IoT Standardization Unified Data Standards Protocols IEEE 802.15.4 BACNet Protocol point-to-point protocols Ethernet protocals cellular Internet access protocal Machine-to-machine protocal Modbus KNX Zigbee Architecture Network layer APS layer Security UNIT III#Web of Things Web of Things versus Internet of Things Two Pillars of the Web Architecture Standardization for WoT Platform Middleware for WoT Unified Multitier WoT Architecture WoT Portals and Business Intelligence Cloud of Things Grid/SOA and Cloud Computing Cloud Middleware Cloud Standards Cloud Providers and Systems Mobile Cloud Computing The Cloud of Things Architecture UNIT IV#Integrating IOT Integrated Billing Solutions in the IoT Business Models for the IoT Network Dynamics Population Models Information Cascades Network Effects Structural Models Cascading Behavior in Networks The Small World Phenomenon UNIT V#Applications The Role of the IoT for Increased Autonomy and Agility in Collaborative Production Environments Resource Management in the Internet of Things Clustering Synchronization Software Agents Applications Smart Grid Electrical Vehicle Charging Case studies Sensor body-area-network Control of a smart home">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="UNIT I#Introduction Internet Layers Protocols Packets Services Performance parameters Peer-to peer networks Sensor networks Multimedia IOT Definitions and Functional Requirements Motivation Architecture Web 3.0 View of IoT Ubiquitous IoT Applications Four Pillars of IoT DNA of IoT The Toolkit Approach for End-user Participation in the Internet of Things Middleware for IoT Overview Communication middleware for IoT IoT Information Security UNIT II#IoT protocols Protocol Standardization for IoT Efforts M2M and WSN Protocols SCADA and RFID Protocols Issues with IoT Standardization Unified Data Standards Protocols IEEE 802.15.4 BACNet Protocol point-to-point protocols Ethernet protocals cellular Internet access protocal Machine-to-machine protocal Modbus KNX Zigbee Architecture Network layer APS layer Security UNIT III#Web of Things Web of Things versus Internet of Things Two Pillars of the Web Architecture Standardization for WoT Platform Middleware for WoT Unified Multitier WoT Architecture WoT Portals and Business Intelligence Cloud of Things Grid/SOA and Cloud Computing Cloud Middleware Cloud Standards Cloud Providers and Systems Mobile Cloud Computing The Cloud of Things Architecture UNIT IV#Integrating IOT Integrated Billing Solutions in the IoT Business Models for the IoT Network Dynamics Population Models Information Cascades Network Effects Structural Models Cascading Behavior in Networks The Small World Phenomenon UNIT V#Applications The Role of the IoT for Increased Autonomy and Agility in Collaborative Production Environments Resource Management in the Internet of Things Clustering Synchronization Software Agents Applications Smart Grid Electrical Vehicle Charging Case studies Sensor body-area-network Control of a smart home">
+  <meta itemprop="wordCount" content="241">
+
+<title>Topics | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/iot/topics/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bigdata/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/survive/" class="">
+      Survive</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/syllabus/" class="">
+      Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_1/" class="">
+      Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_2/" class="">
+      Unit 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_3/" class="">
+      Unit 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_4/" class="">
+      Unit 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compiler/unit_5/" class="">
+      Unit 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="active">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/arch/" class="">
+      Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Topics</h3>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="unit-i">UNIT I<a class="anchor" href="#unit-i">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Introduction
+<ul>
+<li><input disabled="" type="checkbox"> Internet Layers</li>
+<li><input disabled="" type="checkbox"> Protocols</li>
+<li><input disabled="" type="checkbox"> Packets</li>
+<li><input disabled="" type="checkbox"> Services</li>
+<li><input disabled="" type="checkbox"> Performance parameters</li>
+<li><input disabled="" type="checkbox"> Peer-to peer networks</li>
+<li><input disabled="" type="checkbox"> Sensor networks</li>
+<li><input disabled="" type="checkbox"> Multimedia</li>
+<li><input disabled="" type="checkbox"> IOT Definitions and Functional Requirements</li>
+<li><input disabled="" type="checkbox"> Motivation</li>
+<li><input disabled="" type="checkbox"> Architecture</li>
+<li><input disabled="" type="checkbox"> Web 3.0 View of IoT</li>
+<li><input disabled="" type="checkbox"> Ubiquitous IoT Applications</li>
+<li><input disabled="" type="checkbox"> Four Pillars of IoT</li>
+<li><input disabled="" type="checkbox"> DNA of IoT</li>
+<li><input disabled="" type="checkbox"> The Toolkit Approach for End-user Participation in the Internet of Things</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Middleware for IoT
+<ul>
+<li><input disabled="" type="checkbox"> Overview</li>
+<li><input disabled="" type="checkbox"> Communication middleware for IoT</li>
+<li><input disabled="" type="checkbox"> IoT Information Security</li>
+</ul>
+</li>
+</ul>
+<h1 id="unit-ii">UNIT II<a class="anchor" href="#unit-ii">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> IoT protocols
+<ul>
+<li><input disabled="" type="checkbox"> Protocol Standardization for IoT
+<ul>
+<li><input disabled="" type="checkbox"> Efforts</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> M2M and WSN Protocols</li>
+<li><input disabled="" type="checkbox"> SCADA and RFID Protocols</li>
+<li><input disabled="" type="checkbox"> Issues with IoT Standardization</li>
+<li><input disabled="" type="checkbox"> Unified Data Standards</li>
+<li><input disabled="" type="checkbox"> Protocols
+<ul>
+<li><input disabled="" type="checkbox"> IEEE 802.15.4</li>
+<li><input disabled="" type="checkbox"> BACNet Protocol</li>
+<li><input disabled="" type="checkbox"> point-to-point protocols</li>
+<li><input disabled="" type="checkbox"> Ethernet protocals</li>
+<li><input disabled="" type="checkbox"> cellular Internet access protocal</li>
+<li><input disabled="" type="checkbox"> Machine-to-machine protocal</li>
+<li><input disabled="" type="checkbox"> Modbus</li>
+<li><input disabled="" type="checkbox"> KNX</li>
+<li><input disabled="" type="checkbox"> Zigbee Architecture
+<ul>
+<li><input disabled="" type="checkbox"> Network layer</li>
+<li><input disabled="" type="checkbox"> APS layer</li>
+<li><input disabled="" type="checkbox"> Security</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="unit-iii">UNIT III<a class="anchor" href="#unit-iii">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Web of Things
+<ul>
+<li><input disabled="" type="checkbox"> Web of Things versus Internet of Things</li>
+<li><input disabled="" type="checkbox"> Two Pillars of the Web</li>
+<li><input disabled="" type="checkbox"> Architecture Standardization for WoT</li>
+<li><input disabled="" type="checkbox"> Platform Middleware for WoT</li>
+<li><input disabled="" type="checkbox"> Unified Multitier WoT Architecture</li>
+<li><input disabled="" type="checkbox"> WoT Portals and Business Intelligence</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Cloud of Things
+<ul>
+<li><input disabled="" type="checkbox"> Grid/SOA and Cloud Computing</li>
+<li><input disabled="" type="checkbox"> Cloud Middleware</li>
+<li><input disabled="" type="checkbox"> Cloud Standards</li>
+<li><input disabled="" type="checkbox"> Cloud Providers and Systems</li>
+<li><input disabled="" type="checkbox"> Mobile Cloud Computing</li>
+<li><input disabled="" type="checkbox"> The Cloud of Things Architecture</li>
+</ul>
+</li>
+</ul>
+<h1 id="unit-iv">UNIT IV<a class="anchor" href="#unit-iv">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Integrating IOT
+<ul>
+<li><input disabled="" type="checkbox"> Integrated Billing Solutions in the IoT</li>
+<li><input disabled="" type="checkbox"> Business Models for the IoT</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Network Dynamics
+<ul>
+<li><input disabled="" type="checkbox"> Population Models</li>
+<li><input disabled="" type="checkbox"> Information Cascades</li>
+<li><input disabled="" type="checkbox"> Network Effects</li>
+<li><input disabled="" type="checkbox"> Structural Models</li>
+<li><input disabled="" type="checkbox"> Cascading Behavior in Networks</li>
+<li><input disabled="" type="checkbox"> The Small World Phenomenon</li>
+</ul>
+</li>
+</ul>
+<h1 id="unit-v">UNIT V<a class="anchor" href="#unit-v">#</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Applications
+<ul>
+<li><input disabled="" type="checkbox"> The Role of the IoT for Increased Autonomy and Agility in Collaborative Production Environments</li>
+<li><input disabled="" type="checkbox"> Resource Management in the Internet of Things
+<ul>
+<li><input disabled="" type="checkbox"> Clustering</li>
+<li><input disabled="" type="checkbox"> Synchronization</li>
+<li><input disabled="" type="checkbox"> Software Agents</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Applications
+<ul>
+<li><input disabled="" type="checkbox"> Smart Grid</li>
+<li><input disabled="" type="checkbox"> Electrical Vehicle Charging</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Case studies
+<ul>
+<li><input disabled="" type="checkbox"> Sensor body-area-network</li>
+<li><input disabled="" type="checkbox"> Control of a smart home</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/iot/imp_topics/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Imp Topics</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/iot/unit_1/essays/arch/" class="flex align-center">
+        <span>Arch</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
