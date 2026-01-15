@@ -1,9 +1,3 @@
-
-            $note = $matches[1]
-            $heading = $matches[2]
-            $url = [uri]::EscapeUriString($note)
-            "[$note]($url.md$heading)"
-        
 # IoT DEFINITIONS AND FUNCTIONAL REQUIREMENTS
 
 ## Introduction
