@@ -8,17 +8,17 @@
     - [ ] Peer-to peer networks
     - [ ] Sensor networks
     - [ ] Multimedia
-    - [ ] IOT Definitions and Functional Requirements
-    - [ ] Motivation
-    - [ ] Architecture
-    - [ ] Web 3.0 View of IoT
-    - [ ] Ubiquitous IoT Applications
-    - [ ] Four Pillars of IoT
-    - [ ] DNA of IoT
+    - [x] IOT Definitions and Functional Requirements
+    - [x] Motivation
+    - [x] Architecture
+    - [x] Web 3.0 View of IoT
+    - [x] Ubiquitous IoT Applications
+    - [x] Four Pillars of IoT
+    - [x] DNA of IoT
     - [ ] The Toolkit Approach for End-user Participation in the Internet of Things
 - [ ] Middleware for IoT
-    - [ ] Overview
-    - [ ] Communication middleware for IoT
+    - [x] Overview
+    - [x] Communication middleware for IoT
     - [ ] IoT Information Security
 
 # UNIT II

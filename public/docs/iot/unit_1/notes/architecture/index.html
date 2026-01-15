@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" $note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;ARCHITECTURE OF INTERNET OF THINGS (IoT)#Introduction#The Internet of Things (IoT) is a large-scale distributed system that integrates physical objects, communication networks, and information systems. Due to the heterogeneity of devices, networks, and applications, a well-defined IoT architecture is essential for scalability, interoperability, and manageability.
+According to Honbo Zhou, IoT should not be viewed as isolated technologies but as a layered architecture, where each layer performs a specific function. Most IoT architectures, regardless of implementation, can be abstracted into a three-layer model, also known as the DCM architecture.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/iot/unit_1/notes/architecture/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;ARCHITECTURE OF INTERNET OF THINGS (IoT)#Introduction#The Internet of Things (IoT) is a large-scale distributed system that integrates physical objects, communication networks, and information systems. Due to the heterogeneity of devices, networks, and applications, a well-defined IoT architecture is essential for scalability, interoperability, and manageability.
+According to Honbo Zhou, IoT should not be viewed as isolated technologies but as a layered architecture, where each layer performs a specific function. Most IoT architectures, regardless of implementation, can be abstracted into a three-layer model, also known as the DCM architecture.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;ARCHITECTURE OF INTERNET OF THINGS (IoT)#Introduction#The Internet of Things (IoT) is a large-scale distributed system that integrates physical objects, communication networks, and information systems. Due to the heterogeneity of devices, networks, and applications, a well-defined IoT architecture is essential for scalability, interoperability, and manageability.
+According to Honbo Zhou, IoT should not be viewed as isolated technologies but as a layered architecture, where each layer performs a specific function. Most IoT architectures, regardless of implementation, can be abstracted into a three-layer model, also known as the DCM architecture.">
+  <meta itemprop="wordCount" content="743">
+
+<title>Architecture | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/iot/unit_1/notes/architecture/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.acd6752a734186c369e94d44a3381470b542082a544b9f390031ba3d96e33c6c.js" integrity="sha256-rNZ1KnNBhsNp6U1EozgUcLVCCCpUS585ADG6PZbjPGw=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/imp_topics/" class="">
+      Imp Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/topics/" class="">
+      Topics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/info_security/" class="">
+      Info Security</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/iot_pillars/" class="">
+      Io T Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot/" class="">
+      Iot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_arch/" class="">
+      Io T Arch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/iot_unit_1/" class="">
+      Iot Unit 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/architecture/" class="active">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/comm_middleware/" class="">
+      Comm Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/dna/" class="">
+      Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
+      Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/info_security/" class="">
+      Info Security</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/iot_def/" class="">
+      Io T Def</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/middleware/" class="">
+      Middleware</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/motivation/" class="">
+      Motivation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/ubiquitous/" class="">
+      Ubiquitous</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/web_3.0/" class="">
+      Web 3.0</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Architecture</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#need-for-iot-architecture">Need for IoT Architecture</a></li>
+    <li><a href="#layered-architecture-of-iot-dcm-model">Layered Architecture of IoT (DCM Model)</a></li>
+    <li><a href="#diagram-iot-architecture-exam-sketch">Diagram: IoT Architecture (Exam Sketch)</a></li>
+    <li><a href="#1-device-layer-perception-layer">1. Device Layer (Perception Layer)</a>
+      <ul>
+        <li><a href="#meaning">Meaning</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#role-in-architecture">Role in Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-connect-layer-network-layer">2. Connect Layer (Network Layer)</a>
+      <ul>
+        <li><a href="#meaning-1">Meaning</a></li>
+        <li><a href="#types-of-networks">Types of Networks</a></li>
+        <li><a href="#functions-1">Functions</a></li>
+        <li><a href="#role-in-architecture-1">Role in Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-manage-layer-middleware-and-application-layer">3. Manage Layer (Middleware and Application Layer)</a>
+      <ul>
+        <li><a href="#meaning-2">Meaning</a></li>
+        <li><a href="#components-1">Components</a></li>
+        <li><a href="#functions-2">Functions</a></li>
+        <li><a href="#role-in-architecture-2">Role in Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#role-of-middleware-in-iot-architecture">Role of Middleware in IoT Architecture</a></li>
+    <li><a href="#iot-architecture-and-cloud-computing">IoT Architecture and Cloud Computing</a></li>
+    <li><a href="#relationship-between-iot-architecture-and-four-pillars">Relationship Between IoT Architecture and Four Pillars</a></li>
+    <li><a href="#importance-of-iot-architecture">Importance of IoT Architecture</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#memory-hook-exam-friendly">Memory Hook (Exam-Friendly)</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><pre><code>        $note = $matches[1]
+        $heading = $matches[2]
+        $url = [uri]::EscapeUriString($note)
+        &quot;[$note]($url.md$heading)&quot;
+</code></pre>
+<h1 id="architecture-of-internet-of-things-iot">ARCHITECTURE OF INTERNET OF THINGS (IoT)<a class="anchor" href="#architecture-of-internet-of-things-iot">#</a></h1>
+<h2 id="introduction">Introduction<a class="anchor" href="#introduction">#</a></h2>
+<p>The Internet of Things (IoT) is a <strong>large-scale distributed system</strong> that integrates physical objects, communication networks, and information systems. Due to the heterogeneity of devices, networks, and applications, a well-defined <strong>IoT architecture</strong> is essential for scalability, interoperability, and manageability.</p>
+<p>According to Honbo Zhou, IoT should not be viewed as isolated technologies but as a <strong>layered architecture</strong>, where each layer performs a specific function. Most IoT architectures, regardless of implementation, can be abstracted into a <strong>three-layer model</strong>, also known as the <strong>DCM architecture</strong>.</p>
+<hr>
+<h2 id="need-for-iot-architecture">Need for IoT Architecture<a class="anchor" href="#need-for-iot-architecture">#</a></h2>
+<p>IoT systems face several challenges:</p>
+<ul>
+<li>
+<p>Large number of heterogeneous devices</p>
+</li>
+<li>
+<p>Multiple communication technologies</p>
+</li>
+<li>
+<p>Fragmented value chains</p>
+</li>
+<li>
+<p>Need for real-time monitoring and control</p>
+</li>
+</ul>
+<p>Without a proper architecture, IoT systems become <strong>vertical silos</strong>, making integration and scaling difficult. A layered architecture provides <strong>abstraction, modularity, and flexibility</strong>.</p>
+<hr>
+<h2 id="layered-architecture-of-iot-dcm-model">Layered Architecture of IoT (DCM Model)<a class="anchor" href="#layered-architecture-of-iot-dcm-model">#</a></h2>
+<p>The core IoT architecture consists of <strong>three fundamental layers</strong>:</p>
+<ol>
+<li>
+<p><strong>Device Layer</strong></p>
+</li>
+<li>
+<p><strong>Connect Layer</strong></p>
+</li>
+<li>
+<p><strong>Manage Layer</strong></p>
+</li>
+</ol>
+<p>This architecture represents both the <strong>IoT system structure</strong> and the <strong>IoT value chain</strong>.</p>
+<hr>
+<h2 id="diagram-iot-architecture-exam-sketch">Diagram: IoT Architecture (Exam Sketch)<a class="anchor" href="#diagram-iot-architecture-exam-sketch">#</a></h2>
+<pre tabindex="0"><code>┌──────────────────────────┐
+│        MANAGE LAYER      │
+│ Applications, Analytics  │
+│ Middleware, Cloud        │
+└───────────▲──────────────┘
+            │
+┌───────────┴──────────────┐
+│        CONNECT LAYER     │
+│ Wired &amp; Wireless Networks│
+└───────────▲──────────────┘
+            │
+┌───────────┴──────────────┐
+│        DEVICE LAYER      │
+│ Sensors, Actuators, RFID │
+└──────────────────────────┘</code></pre><hr>
+<h2 id="1-device-layer-perception-layer">1. Device Layer (Perception Layer)<a class="anchor" href="#1-device-layer-perception-layer">#</a></h2>
+<h3 id="meaning">Meaning<a class="anchor" href="#meaning">#</a></h3>
+<p>The <strong>Device layer</strong> is the lowest layer of the IoT architecture. It consists of all <strong>physical entities</strong> that interact with the real world. This layer is responsible for <strong>sensing, identification, and actuation</strong>.</p>
+<h3 id="components">Components<a class="anchor" href="#components">#</a></h3>
+<ul>
+<li>
+<p>Sensors (temperature, pressure, motion, etc.)</p>
+</li>
+<li>
+<p>Actuators</p>
+</li>
+<li>
+<p>RFID tags and readers</p>
+</li>
+<li>
+<p>Embedded systems</p>
+</li>
+<li>
+<p>M2M terminals</p>
+</li>
+<li>
+<p>PLCs and RTUs (industrial systems)</p>
+</li>
+</ul>
+<h3 id="functions">Functions<a class="anchor" href="#functions">#</a></h3>
+<ul>
+<li>
+<p>Data sensing and acquisition</p>
+</li>
+<li>
+<p>Object identification</p>
+</li>
+<li>
+<p>Physical actuation</p>
+</li>
+</ul>
+<h3 id="role-in-architecture">Role in Architecture<a class="anchor" href="#role-in-architecture">#</a></h3>
+<p>The device layer enables <strong>instrumentation of the physical world</strong>, converting real-world conditions into digital data.</p>
+<hr>
+<h2 id="2-connect-layer-network-layer">2. Connect Layer (Network Layer)<a class="anchor" href="#2-connect-layer-network-layer">#</a></h2>
+<h3 id="meaning-1">Meaning<a class="anchor" href="#meaning-1">#</a></h3>
+<p>The <strong>Connect layer</strong> provides the <strong>communication infrastructure</strong> that connects IoT devices to gateways, servers, and cloud platforms. It enables reliable data transmission between the physical and digital worlds.</p>
+<h3 id="types-of-networks">Types of Networks<a class="anchor" href="#types-of-networks">#</a></h3>
+<p><strong>Wired Networks</strong></p>
+<ul>
+<li>
+<p>Fieldbus</p>
+</li>
+<li>
+<p>Ethernet</p>
+</li>
+<li>
+<p>Industrial control networks</p>
+</li>
+</ul>
+<p><strong>Wireless Networks</strong></p>
+<ul>
+<li>
+<p>Cellular networks (2G/3G/4G/LTE)</p>
+</li>
+<li>
+<p>Short-range wireless (Bluetooth, ZigBee)</p>
+</li>
+<li>
+<p>Wireless mesh networks</p>
+</li>
+</ul>
+<p><strong>Satellite Networks</strong></p>
+<ul>
+<li>Used in remote or inaccessible areas</li>
+</ul>
+<h3 id="functions-1">Functions<a class="anchor" href="#functions-1">#</a></h3>
+<ul>
+<li>
+<p>Device connectivity</p>
+</li>
+<li>
+<p>Data transport</p>
+</li>
+<li>
+<p>Network management</p>
+</li>
+</ul>
+<h3 id="role-in-architecture-1">Role in Architecture<a class="anchor" href="#role-in-architecture-1">#</a></h3>
+<p>The connect layer enables <strong>interconnection</strong>, allowing data to flow from devices to higher layers for processing.</p>
+<hr>
+<h2 id="3-manage-layer-middleware-and-application-layer">3. Manage Layer (Middleware and Application Layer)<a class="anchor" href="#3-manage-layer-middleware-and-application-layer">#</a></h2>
+<h3 id="meaning-2">Meaning<a class="anchor" href="#meaning-2">#</a></h3>
+<p>The <strong>Manage layer</strong> is the <strong>intelligence and value-creation layer</strong> of the IoT architecture. It processes raw data collected from devices and converts it into useful information and services.</p>
+<h3 id="components-1">Components<a class="anchor" href="#components-1">#</a></h3>
+<ul>
+<li>
+<p>Middleware platforms</p>
+</li>
+<li>
+<p>Databases</p>
+</li>
+<li>
+<p>Cloud computing infrastructure</p>
+</li>
+<li>
+<p>Application services</p>
+</li>
+<li>
+<p>Analytics and visualization tools</p>
+</li>
+</ul>
+<h3 id="functions-2">Functions<a class="anchor" href="#functions-2">#</a></h3>
+<ul>
+<li>
+<p>Device management</p>
+</li>
+<li>
+<p>Data storage and processing</p>
+</li>
+<li>
+<p>Monitoring and control</p>
+</li>
+<li>
+<p>Security and access control</p>
+</li>
+<li>
+<p>Decision support and analytics</p>
+</li>
+</ul>
+<h3 id="role-in-architecture-2">Role in Architecture<a class="anchor" href="#role-in-architecture-2">#</a></h3>
+<p>The manage layer transforms <strong>raw data into actionable intelligence</strong> and is responsible for delivering <strong>business value</strong>.</p>
+<hr>
+<h2 id="role-of-middleware-in-iot-architecture">Role of Middleware in IoT Architecture<a class="anchor" href="#role-of-middleware-in-iot-architecture">#</a></h2>
+<p>Middleware plays a <strong>central role</strong> in IoT architecture and acts as the <strong>glue</strong> between devices, networks, and applications.</p>
+<p>Middleware provides:</p>
+<ul>
+<li>
+<p>Protocol abstraction</p>
+</li>
+<li>
+<p>Unified data models</p>
+</li>
+<li>
+<p>Interoperability across heterogeneous systems</p>
+</li>
+<li>
+<p>Scalability and reusability</p>
+</li>
+</ul>
+<p>Without middleware, IoT systems remain <strong>isolated and application-specific</strong>.</p>
+<hr>
+<h2 id="iot-architecture-and-cloud-computing">IoT Architecture and Cloud Computing<a class="anchor" href="#iot-architecture-and-cloud-computing">#</a></h2>
+<p>Modern IoT architectures are closely integrated with <strong>cloud computing</strong>. Cloud platforms provide:</p>
+<ul>
+<li>
+<p>Elastic storage and computation</p>
+</li>
+<li>
+<p>Global accessibility</p>
+</li>
+<li>
+<p>Support for large-scale data analytics</p>
+</li>
+</ul>
+<p>The manage layer is often implemented using <strong>cloud-based middleware</strong>, enabling scalable and cost-effective IoT solutions.</p>
+<hr>
+<h2 id="relationship-between-iot-architecture-and-four-pillars">Relationship Between IoT Architecture and Four Pillars<a class="anchor" href="#relationship-between-iot-architecture-and-four-pillars">#</a></h2>
+<p>The IoT architecture supports all four pillars:</p>
+<ul>
+<li>
+<p><strong>RFID</strong> → Identification at the device layer</p>
+</li>
+<li>
+<p><strong>WSN</strong> → Sensing at device and network layers</p>
+</li>
+<li>
+<p><strong>M2M</strong> → Connectivity through wide-area networks</p>
+</li>
+<li>
+<p><strong>SCADA</strong> → Monitoring and control at the manage layer</p>
+</li>
+</ul>
+<p>Thus, IoT architecture acts as a <strong>unifying framework</strong> for diverse IoT technologies.</p>
+<hr>
+<h2 id="importance-of-iot-architecture">Importance of IoT Architecture<a class="anchor" href="#importance-of-iot-architecture">#</a></h2>
+<ul>
+<li>
+<p>Enables scalability and flexibility</p>
+</li>
+<li>
+<p>Supports interoperability</p>
+</li>
+<li>
+<p>Simplifies system design and management</p>
+</li>
+<li>
+<p>Prevents vertical silos</p>
+</li>
+<li>
+<p>Aligns technology with business objectives</p>
+</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion<a class="anchor" href="#conclusion">#</a></h2>
+<p>The architecture of the Internet of Things provides a <strong>structured, layered framework</strong> for integrating physical devices, communication networks, middleware, and applications. As explained in the reference book, although IoT technologies are diverse, their architectures converge around a <strong>three-layer model consisting of Device, Connect, and Manage layers</strong>. This architectural approach enables scalable, interoperable, and intelligent IoT systems that effectively bridge the physical and digital worlds.</p>
+<hr>
+<h2 id="memory-hook-exam-friendly">Memory Hook (Exam-Friendly)<a class="anchor" href="#memory-hook-exam-friendly">#</a></h2>
+<p><strong>IoT Architecture = D → C → M</strong></p>
+<ul>
+<li><strong>Device</strong> → Sense &amp; Act</li>
+<li><strong>Connect</strong> → Transfer Data</li>
+<li><strong>Manage</strong> → Intelligence &amp; Value</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/iot/unit_1/iot_unit_1/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Iot Unit 1</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/iot/unit_1/notes/comm_middleware/" class="flex align-center">
+        <span>Comm Middleware</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#need-for-iot-architecture">Need for IoT Architecture</a></li>
+    <li><a href="#layered-architecture-of-iot-dcm-model">Layered Architecture of IoT (DCM Model)</a></li>
+    <li><a href="#diagram-iot-architecture-exam-sketch">Diagram: IoT Architecture (Exam Sketch)</a></li>
+    <li><a href="#1-device-layer-perception-layer">1. Device Layer (Perception Layer)</a>
+      <ul>
+        <li><a href="#meaning">Meaning</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#role-in-architecture">Role in Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-connect-layer-network-layer">2. Connect Layer (Network Layer)</a>
+      <ul>
+        <li><a href="#meaning-1">Meaning</a></li>
+        <li><a href="#types-of-networks">Types of Networks</a></li>
+        <li><a href="#functions-1">Functions</a></li>
+        <li><a href="#role-in-architecture-1">Role in Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-manage-layer-middleware-and-application-layer">3. Manage Layer (Middleware and Application Layer)</a>
+      <ul>
+        <li><a href="#meaning-2">Meaning</a></li>
+        <li><a href="#components-1">Components</a></li>
+        <li><a href="#functions-2">Functions</a></li>
+        <li><a href="#role-in-architecture-2">Role in Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#role-of-middleware-in-iot-architecture">Role of Middleware in IoT Architecture</a></li>
+    <li><a href="#iot-architecture-and-cloud-computing">IoT Architecture and Cloud Computing</a></li>
+    <li><a href="#relationship-between-iot-architecture-and-four-pillars">Relationship Between IoT Architecture and Four Pillars</a></li>
+    <li><a href="#importance-of-iot-architecture">Importance of IoT Architecture</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#memory-hook-exam-friendly">Memory Hook (Exam-Friendly)</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

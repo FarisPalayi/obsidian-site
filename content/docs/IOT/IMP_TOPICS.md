@@ -2,11 +2,11 @@
 
 - [ ] IoT definition + functional requirements
 - [ ] IoT architecture (layers!)
-- [ ] Four Pillars of IoT
-- [ ] DNA of IoT
-- [ ] Web 3.0 view of IoT
-- [ ] Middleware for IoT
-- [ ] IoT Information Security
+- [x] Four Pillars of IoT
+- [x] DNA of IoT
+- [x] Web 3.0 view of IoT
+- [x] Middleware for IoT
+- [x] IoT Information Security
 
 # UNIT 2
 ## Must know protocols

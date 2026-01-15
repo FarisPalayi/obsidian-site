@@ -8,21 +8,21 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Compiler Design Syllabus##Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis ">
+<meta name="description" content="Compiler Design Syllabus##$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/compiler/syllabus/">
   <meta property="og:site_name" content="My New Hugo Site">
   <meta property="og:title" content="My New Hugo Site">
-  <meta property="og:description" content="Compiler Design Syllabus##Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis">
+  <meta property="og:description" content="Compiler Design Syllabus##$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="My New Hugo Site">
-  <meta itemprop="description" content="Compiler Design Syllabus##Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis">
-  <meta itemprop="wordCount" content="285">
+  <meta itemprop="description" content="Compiler Design Syllabus##$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Introduction to Compiling Definition of compiler Translator Interpreter Analysis of the source program Phases of a compiler Compiler construction tools Programming language basics Lexical analysis Role of lexical analyzer Input buffering Specification of tokens Recognition of tokens using finite automata Regular expressions and finite automata Conversion from NFA to DFA Regular expression to NFA #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Syntax analysis Role of parser Error handling and recovery Parsing concepts Definitions of parsing Top-down parsing Bottom-up parsing Context-free grammars Derivations Parse tree Ambiguity Associativity and precedence of operators Top-down parsing techniques Recursive descent parsing LL(1) grammars Non-recursive predictive parsing Bottom-up parsing techniques Reductions Handle pruning Shift-reduce parsing Operator precedence parsing Simple LR parsing #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Syntax-directed translation Syntax-directed definitions S-attributed definitions L-attributed definitions Bottom-up and top-down translations Type checking Type systems Specification of a type checker Symbol table Intermediate code generation Directed acyclic graphs (DAG) Three-address code Addresses and instructions Quadruples Triples Indirect triples #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Run-time environments Storage optimization Static vs dynamic allocation Stack allocation of space Activation records and procedures Activation trees and records Calling sequences Access to non-local data on the stack Data access without nested procedures Issues with nested procedures Heap management The memory manager The memory hierarchy #$note = $matches[1]$heading = $matches[2]$url = [uri]::EscapeUriString($note)&#34;[$note]($url.md$heading)&#34;Code generation Issues in the design of a code generator The target language A simple target machine model Program and instruction costs Addresses in the target code Static allocation Stack allocation Run-time addresses for names Basic blocks and flow graphs Representation of flow graphs Code optimization Principal sources of optimization Data flow analysis Abstraction Data flow analysis schema Data flow schemas on basic blocks Reaching definitions Live variable analysis Available expressions Region-based analysis Regions Region hierarchies for reducible flow graphs Overview of region-based analysis">
+  <meta itemprop="wordCount" content="335">
 
 <title>Syllabus | My New Hugo Site</title>
 <link rel="icon" href="/favicon.png" >
@@ -32,7 +32,7 @@ https://github.com/alex-shpak/hugo-book
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.12025d4f467a4b4a5a145bc28854c9da0b328208b830ec86e18bad3fdf3a4513.js" integrity="sha256-EgJdT0Z6S0paFFvCiFTJ2gsyggi4MOyG4YutP986RRM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d8aa6baa65cb2ce31f6d00ff9ca78492af0590691f7a2f26aeb4fd4150480d27.js" integrity="sha256-2KprqmXLLOMfbQD/nKeEkq8FkGkfei8mrrT9QVBIDSc=" crossorigin="anonymous"></script>
 
 
 
@@ -225,8 +225,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/iot/unit_1/essays/arch/" class="">
-      Arch</a>
+    <a href="/docs/iot/unit_1/essays/architecture/" class="">
+      Architecture</a>
   
 
         </li>
@@ -255,6 +255,20 @@ https://github.com/alex-shpak/hugo-book
   
     <a href="/docs/iot/unit_1/essays/dna/" class="">
       Dna</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/essays/info_security/" class="">
+      Info Security</a>
   
 
         </li>
@@ -393,8 +407,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/iot/unit_1/notes/arch/" class="">
-      Arch</a>
+    <a href="/docs/iot/unit_1/notes/architecture/" class="">
+      Architecture</a>
   
 
         </li>
@@ -437,6 +451,20 @@ https://github.com/alex-shpak/hugo-book
   
     <a href="/docs/iot/unit_1/notes/four_pillars/" class="">
       Four Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/iot/unit_1/notes/info_security/" class="">
+      Info Security</a>
   
 
         </li>
@@ -581,7 +609,12 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown book-article"><h1 id="compiler-design-syllabus">Compiler Design Syllabus<a class="anchor" href="#compiler-design-syllabus">#</a></h1>
-<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<h2 id=""><a class="anchor" href="#">#</a></h2>
+<pre><code>        $note = $matches[1]
+        $heading = $matches[2]
+        $url = [uri]::EscapeUriString($note)
+        &quot;[$note]($url.md$heading)&quot;
+</code></pre>
 <ul>
 <li><input disabled="" type="checkbox"> Introduction to Compiling
 <ul>
@@ -609,7 +642,12 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<h2 id=""><a class="anchor" href="#">#</a></h2>
+<pre><code>        $note = $matches[1]
+        $heading = $matches[2]
+        $url = [uri]::EscapeUriString($note)
+        &quot;[$note]($url.md$heading)&quot;
+</code></pre>
 <ul>
 <li><input disabled="" type="checkbox"> Syntax analysis
 <ul>
@@ -649,7 +687,12 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<h2 id=""><a class="anchor" href="#">#</a></h2>
+<pre><code>        $note = $matches[1]
+        $heading = $matches[2]
+        $url = [uri]::EscapeUriString($note)
+        &quot;[$note]($url.md$heading)&quot;
+</code></pre>
 <ul>
 <li><input disabled="" type="checkbox"> Syntax-directed translation
 <ul>
@@ -680,7 +723,12 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<h2 id=""><a class="anchor" href="#">#</a></h2>
+<pre><code>        $note = $matches[1]
+        $heading = $matches[2]
+        $url = [uri]::EscapeUriString($note)
+        &quot;[$note]($url.md$heading)&quot;
+</code></pre>
 <ul>
 <li><input disabled="" type="checkbox"> Run-time environments
 <ul>
@@ -705,7 +753,12 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h2 id=""><a href=".md"></a><a class="anchor" href="#">#</a></h2>
+<h2 id=""><a class="anchor" href="#">#</a></h2>
+<pre><code>        $note = $matches[1]
+        $heading = $matches[2]
+        $url = [uri]::EscapeUriString($note)
+        &quot;[$note]($url.md$heading)&quot;
+</code></pre>
 <ul>
 <li><input disabled="" type="checkbox"> Code generation
 <ul>

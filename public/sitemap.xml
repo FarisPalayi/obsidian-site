@@ -2,31 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/docs/bigdata/unit_4/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/compiler/survive/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/compiler/syllabus/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/compiler/unit_1/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/compiler/unit_2/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/compiler/unit_3/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/compiler/unit_4/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/compiler/unit_5/</loc>
-  </url><url>
     <loc>http://localhost:1313/docs/iot/imp_topics/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/topics/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/iot/unit_1/essays/arch/</loc>
+    <loc>http://localhost:1313/docs/iot/unit_1/essays/architecture/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/essays/comm_middleware/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/essays/dna/</loc>
+  </url><url>
+    <loc>http://localhost:1313/docs/iot/unit_1/essays/info_security/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/essays/iot_def/</loc>
   </url><url>
@@ -46,13 +32,15 @@
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/iot_unit_1/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/iot/unit_1/notes/arch/</loc>
+    <loc>http://localhost:1313/docs/iot/unit_1/notes/architecture/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/notes/comm_middleware/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/notes/dna/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/notes/four_pillars/</loc>
+  </url><url>
+    <loc>http://localhost:1313/docs/iot/unit_1/notes/info_security/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/iot/unit_1/notes/iot_def/</loc>
   </url><url>

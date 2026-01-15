@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IOT/UNIT_1/Notes/Comm_middleware.md",
+                "file": "IOT/UNIT_1/Notes/Info_security.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Comm_middleware"
+              "title": "Info_security"
             }
           }
         ]
@@ -209,8 +209,12 @@
   },
   "active": "c04caa08d76234fa",
   "lastOpenFiles": [
-    "IOT/UNIT_1/Essays/Comm_middleware.md",
+    "IOT/UNIT_1/Essays/Info_security.md",
     "IOT/UNIT_1/Notes/Comm_middleware.md",
+    "IOT/UNIT_1/Notes/Info_security.md",
+    "IOT/UNIT_1/Essays/Comm_middleware.md",
+    "IOT/UNIT_1/Notes/Architecture.md",
+    "IOT/UNIT_1/Essays/Architecture.md",
     "IOT/UNIT_1/Notes/Middleware.md",
     "IOT/UNIT_1/Essays/Middleware.md",
     "IOT/UNIT_1/IOT_UNIT_1.md",
@@ -221,14 +225,12 @@
     "IOT/UNIT_1/Notes/Motivation.md",
     "IOT/UNIT_1/Notes/IoT_def.md",
     "IOT/UNIT_1/Notes/DNA.md",
-    "IOT/UNIT_1/Notes/Arch.md",
     "IOT/UNIT_1/IOT.md",
     "IOT/UNIT_1/IoT_arch.md",
     "IOT/UNIT_1/Essays/Ubiquitous.md",
     "IOT/UNIT_1/Essays/Motivation.md",
     "IOT/UNIT_1/Essays/motivation.md",
     "IOT/IMP_TOPICS.md",
-    "IOT/UNIT_1/Essays/Arch.md",
     "IOT/UNIT_1/Essays/Web_3.0.md",
     "IOT/UNIT_1/Essays/IoT_def.md",
     "IOT/Topics.md",
@@ -237,10 +239,8 @@
     "IOT/UNIT_1/Essays",
     "IOT/UNIT_1/Notes",
     "IOT/UNIT_1/IoT_pillars.md~",
-    "IOT/Topics.md.md",
     "IOT/Topics.md.md~",
     "IOT/UNIT_1/IOT.md~",
-    "Compiler/Unit_2.md",
     "IOT/UNIT_1",
     "Pasted image 20260111025913.png",
     "Untitled.base",
